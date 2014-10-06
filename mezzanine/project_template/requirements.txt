@@ -1,6 +1,6 @@
-Django==1.6.7
+Django==1.7
 Fabric==1.10.0
--e git+git@github.com:scalio/mezzanine.git@7e8cb322f35ca0c2726150ea7c7f4aad8ed420a4#egg=Mezzanine-storymaker
+file:../mezzanine#egg=Mezzanine-storymaker
 Pillow==2.6.0
 Pygments==1.6
 South==1.0

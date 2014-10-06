@@ -250,7 +250,6 @@ INSTALLED_APPS = (
     "mezzanine.twitter",
     "mezzanine.accounts",
     "mezzanine.mobile",
-    'south',
     'actstream',
 )
 
