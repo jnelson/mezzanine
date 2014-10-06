@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n future mezzanine_tags blog_tags keyword_tags disqus_tags %}
+{% load i18n future mezzanine_tags blog_tags keyword_tags disqus_tags activity_tags %}
 
 {% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Blog" %}{% endif %}{% endblock %}
 
@@ -56,6 +56,17 @@
     {% else %}{% if author %}
         {% trans "Viewing posts by" %}
         {{ author.get_full_name|default:author.username }}
+        
+        
+        <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a> 
+        <a href="{% follow_url author %}"> 
+        {% if request.user|is_following:author %}
+            (stop following)
+        {% else %}
+            (follow)
+        {% endif %}
+        </a>
+        
     {% endif %}{% endif %}{% endif %}{% endif %}
     {% endblock %}
     </p>
