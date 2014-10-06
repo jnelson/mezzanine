@@ -1,1 +1,26 @@
-Mezzanine==3.1.10
+Django==1.6.7
+Fabric==1.10.0
+-e git+git@github.com:scalio/mezzanine.git@7e8cb322f35ca0c2726150ea7c7f4aad8ed420a4#egg=Mezzanine-storymaker
+Pillow==2.6.0
+Pygments==1.6
+South==1.0
+argparse==1.2.1
+beautifulsoup4==4.1.3
+bleach==1.4
+bugjar==0.1.0
+django-activity-stream==0.5.0
+ecdsa==0.11
+filebrowser-safe==0.3.6
+future==0.9.0
+grappelli-safe==0.3.13
+html5lib==0.999
+oauthlib==0.6.3
+paramiko==1.15.1
+pycrypto==2.6.1
+pytz==2014.7
+requests==2.4.1
+requests-oauthlib==0.4.1
+six==1.8.0
+tkreadonly==0.5.3
+tzlocal==1.0
+wsgiref==0.1.2
