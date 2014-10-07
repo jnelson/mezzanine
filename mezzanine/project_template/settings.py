@@ -79,6 +79,13 @@ from __future__ import absolute_import, unicode_literals
 # INSTALLED_APPS setting.
 USE_SOUTH = False
 
+###################################
+# DJANGO ACTIVITY STREAM SETTINGS #
+###################################
+
+ACTSTREAM_SETTINGS = {
+    'MANAGER': 'project_template.managers.StoryMakerActionManager',
+}
 
 ########################
 # MAIN DJANGO SETTINGS #
