@@ -1,0 +1,7 @@
+{% extends "page.html" %}
+
+{% block main %}
+    {% for feed_item in feed_items %}
+        {{ feed_item }}
+    {% endfor %}
+{% endblock %}

@@ -5,3 +5,4 @@ class StoryMakerConfig(AppConfig):
 
     def ready(self):
         import signals
+        import pages
