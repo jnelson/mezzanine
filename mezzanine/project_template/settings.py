@@ -77,7 +77,7 @@ from __future__ import absolute_import, unicode_literals
 
 # If True, the south application will be automatically added to the
 # INSTALLED_APPS setting.
-USE_SOUTH = True
+USE_SOUTH = False
 
 
 ########################
@@ -157,6 +157,8 @@ STATICFILES_FINDERS = (
 # a mode you'd pass directly to os.chmod.
 FILE_UPLOAD_PERMISSIONS = 0o644
 
+
+AUTH_PROFILE_MODULE = "project_template.UserProfile"
 
 #############
 # DATABASES #
@@ -239,6 +241,7 @@ INSTALLED_APPS = (
     "django.contrib.sites",
     "django.contrib.sitemaps",
     "django.contrib.staticfiles",
+    "project_template",
     "mezzanine.boot",
     "mezzanine.conf",
     "mezzanine.core",
