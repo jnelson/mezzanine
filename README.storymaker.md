@@ -13,7 +13,7 @@ $ python setup.py develop
 ## 2. Create Superuser
 
 ```
-python mezzanine/project_template/manage.py createsuperuser --settings=mezzanine.project_template.settings
+python mezzanine/project_template/manage.py createsuperuser
 ```
 
 ## 3. Run server
@@ -21,3 +21,20 @@ python mezzanine/project_template/manage.py createsuperuser --settings=mezzanine
 ```
 $ python mezzanine/project_template/manage.py runserver
 ```
+
+## Migrations
+
+Whenever you alter the model run the following before committing:
+
+```
+$ python mezzanine/project_template/manage.py makemigrations
+```
+
+Then to apply those migrations to your local database:
+
+```
+$ python mezzanine/project_template/manage.py migrate
+
+```
+
+See [Django Docs]($ python mezzanine/project_template/manage.py makemigrations) for more info.
