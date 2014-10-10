@@ -1,6 +1,8 @@
 # StoryMaker Mezzanine Development
 
-## 1. Setup project
+## First time setup
+
+### 1. Setup project
 
 ```
 $ pip install -r ./mezzanine/project_template/requirements.txt
@@ -10,13 +12,13 @@ $ cp mezzanine/project_template/dev.db{.default,}
 $ python setup.py develop
 ```
 
-## 2. Create Superuser
+### 2. Create Superuser
 
 ```
 python mezzanine/project_template/manage.py createsuperuser
 ```
 
-## 3. Run server
+### 3. Run server
 
 ```
 $ python mezzanine/project_template/manage.py runserver
@@ -38,3 +40,11 @@ $ python mezzanine/project_template/manage.py migrate
 ```
 
 See [Django Docs]($ python mezzanine/project_template/manage.py makemigrations) for more info.
+
+## Tests
+
+To run tests for this application:
+
+```
+$ python mezzanine/project_template/manage.py test project_template
+```
