@@ -370,7 +370,7 @@ register_setting(
     description=_("Title that will display at the top of the site, and be "
         "appended to the content of the HTML title tags on every page."),
     editable=True,
-    default="Mezzanine",
+    default="StoryMaker.org",
 )
 
 register_setting(
