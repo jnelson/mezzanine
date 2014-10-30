@@ -1,5 +1,5 @@
 from rest_framework import generics
-from pages.models import Page
+from mezzanine.pages.models import Page
 from serializers import PageSerializer
 
 class PagesAPIView(generics.ListAPIView):

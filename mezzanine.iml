@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="django" name="Django">
+      <configuration>
+        <option name="rootFolder" value="$MODULE_DIR$/mezzanine/api" />
+        <option name="settingsModule" value="" />
+        <option name="manageScript" value="" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_CONFIGURATION" value="Django" />
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/mezzanine/blog/templates/blog" />
+        <option value="$MODULE_DIR$/mezzanine/blog/templates/blog/includes" />
+        <option value="$MODULE_DIR$/mezzanine/blog/templates/admin/includes" />
+        <option value="$MODULE_DIR$/mezzanine/conf/templates/admin/conf/setting" />
+        <option value="$MODULE_DIR$/mezzanine/core/templates" />
+        <option value="$MODULE_DIR$/mezzanine/core/templates/admin" />
+        <option value="$MODULE_DIR$/mezzanine/core/templates/admin/includes" />
+        <option value="$MODULE_DIR$/mezzanine/core/templates/email" />
+        <option value="$MODULE_DIR$/mezzanine/core/templates/errors" />
+        <option value="$MODULE_DIR$/mezzanine/core/templates/includes" />
+        <option value="$MODULE_DIR$/mezzanine/forms/templates/admin/forms" />
+        <option value="$MODULE_DIR$/mezzanine/forms/templates/email" />
+        <option value="$MODULE_DIR$/mezzanine/forms/templates/pages" />
+        <option value="$MODULE_DIR$/mezzanine/pages/templates/admin/pages/link" />
+        <option value="$MODULE_DIR$/mezzanine/pages/templates/admin/pages/page" />
+        <option value="$MODULE_DIR$/mezzanine/pages/templates/pages" />
+        <option value="$MODULE_DIR$/mezzanine/pages/templates/pages/menus" />
+        <option value="$MODULE_DIR$/mezzanine/mobile/templates/mobile" />
+        <option value="$MODULE_DIR$/mezzanine/mobile/templates/mobile/blog" />
+        <option value="$MODULE_DIR$/mezzanine/mobile/templates/mobile/pages" />
+        <option value="$MODULE_DIR$/mezzanine/mobile/templates/mobile/pages/menus" />
+        <option value="$MODULE_DIR$/mezzanine/mobile/templates/mobile/includes" />
+        <option value="$MODULE_DIR$/mezzanine/generic/templates/admin/includes" />
+        <option value="$MODULE_DIR$/mezzanine/generic/templates/email" />
+        <option value="$MODULE_DIR$/mezzanine/generic/templates/generic" />
+        <option value="$MODULE_DIR$/mezzanine/generic/templates/generic/includes" />
+        <option value="$MODULE_DIR$/mezzanine/twitter/templates/twitter" />
+        <option value="$MODULE_DIR$/mezzanine/accounts/templates/admin" />
+        <option value="$MODULE_DIR$/mezzanine/accounts/templates/email" />
+        <option value="$MODULE_DIR$/mezzanine/accounts/templates/accounts" />
+        <option value="$MODULE_DIR$/mezzanine/accounts/templates/accounts/includes" />
+        <option value="$MODULE_DIR$/mezzanine/galleries/templates/pages" />
+        <option value="$MODULE_DIR$/mezzanine/project_template/templates/pages" />
+      </list>
+    </option>
+  </component>
+</module>
+
