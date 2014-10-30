@@ -15,4 +15,3 @@ class FollowersFeed(Page):
     pass
 
 admin.site.register(FollowingFeed, PageAdmin)
-admin.site.register(FollowersFeed, PageAdmin)

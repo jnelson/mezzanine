@@ -110,7 +110,7 @@ ALLOWED_HOSTS = []
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = None
+TIME_ZONE = 'America/Los_Angeles'
 
 # If you set this to True, Django will use timezone-aware datetimes.
 USE_TZ = True
@@ -248,6 +248,7 @@ INSTALLED_APPS = (
     "django.contrib.sites",
     "django.contrib.sitemaps",
     "django.contrib.staticfiles",
+    "rest_framework",
     "project_template",
     "mezzanine.boot",
     "mezzanine.conf",
@@ -258,6 +259,7 @@ INSTALLED_APPS = (
     "mezzanine.pages",
     "mezzanine.galleries",
     "mezzanine.twitter",
+    "mezzanine.api",
     "mezzanine.accounts",
     "mezzanine.mobile",
     'actstream',
