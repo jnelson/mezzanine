@@ -11,7 +11,6 @@ bugjar==0.1.0
 django-activity-stream==0.5.0
 django-braces==1.4.0
 django-filter==0.8
-django-oauth2-provider==0.2.7-dev
 djangorestframework==2.4.3
 ecdsa==0.11
 filebrowser-safe==0.3.6

@@ -56,7 +56,7 @@ if getattr(settings, "DEBUG", False):
 # API URLs
 if "mezzanine.api" in settings.INSTALLED_APPS:
     urlpatterns += patterns("",
-    ("^api/", include("mezzanine.api.urls")),
+        ("^api/v0/", include("mezzanine.api.urls")),
 )
 
 # Miscellanous Mezzanine patterns.
