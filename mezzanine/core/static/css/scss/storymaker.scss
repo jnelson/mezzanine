@@ -4,6 +4,11 @@
 
 // Colors
 $black: #222;
+$green: #b3c742;
+$blue: #35678e;
+$grey: #DDD;
+
+$highlight: $blue;
 
 // Fonts
 $openSansStack: 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -15,30 +20,162 @@ body {
 
     font-family: $openSansStack; 
     font-weight: 300;
-    font-size: 100%;
+    font-size: 16px;
     position: relative;	
     padding-top: 0;
-    background-color: $black;
+    background-color: #FFF;
 
 }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    
+    font-family: $openSansStack; 
+    font-weight: 300;
+}
+
+.btn-default {
+    
+    background: none;
+    text-shadow: none;
+    border: 2px solid $grey;
+    box-shadow: none;
+    
+    &:hover,
+    &:focus,
+    &.focus {
+        
+        background: none;
+        border-color: $highlight;
+        color: $highlight;
+    }    
+}
+
+/*  Headers */
+
+h2 {
+    
+    color: red;
+}
+
 
 /* Header */
 
 .navbar {
     
+    border-radius: 0;
+    background: #FFF;
+    margin-bottom: 0;
     
+    > .container .navbar-brand {
+        
+        font-weight: 600;
+        color: $black;
+        background: url(../img/stm-logo.png) no-repeat 0 2px;
+        padding-left: 57px;
+        font-size: pem(14);
+        margin-left: 10px;
+        
+    }
     
+    .navbar-form {
+        
+        display: none; //Temporary
+    }
 }
 
+.banner {
 
-
-.banner{
     background-color:aqua;
+    
+    .banner-header {
+        
+        text-align: center;
+    }
+    
+    h1 {
+        
+        font-family: $openSansStack;
+        font-weight: 300;
+        font-size: pem(51);
+        color: #FFF;
+        width: 95%;
+        text-align: center;
+    }
 }
 
-.banner-header{
-text-align: center;
+
+/* Mission */
+
+.mission {
+    
+    background: url(../img/stm-home-masthead.jpg) no-repeat $blue center center;
+    height: 380px;
+    @include prefix( background-size, cover);
+
+    h1 {
+        
+        margin: 84px auto 0;
+    }
 }
+
+.app-callout {
+    
+    background: url(../img/stm-home-app-callout.jpg) no-repeat $green center center;
+    height: 380px;
+    @include prefix( background-size, cover);
+    
+    h1 {
+        
+        text-align: left;
+        margin-top: 84px;
+    }
+    
+    p {
+        
+        color: #FFF;
+        font-weight: 300;
+    }
+    
+    a {
+        
+        color: #FFF;
+    }
+    
+    .google-play-badge {
+
+        a {
+            
+            display: block;
+            background: url(../img/google-play-badge.png) no-repeat;
+            width: 172px;
+            height: 60px;
+                        
+            @extend .text-replacement;  
+        }
+    }
+    
+    .btn-default {
+        
+        color: #FFF;
+        width: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-color: #FFF;
+        margin-left: 15px;
+        
+        &:hover,
+        &:focus,
+        &.focus {
+            
+            background: #FFF;
+            color: $highlight;
+        } 
+    }
+}
+
+
+
+
 
 .featured-item-panel{
 

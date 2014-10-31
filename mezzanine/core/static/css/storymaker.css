@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,700,300,400);
 .clearfix {
   *zoom: 1; }
   .clearfix:before, .clearfix:after {
@@ -6,21 +7,110 @@
   .clearfix:after {
     clear: both; }
 
+.text-replacement, .app-callout .google-play-badge a {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
 /* Core */
 body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
-  font-size: 100%;
+  font-size: 16px;
   position: relative;
   padding-top: 0;
-  background-color: #222; }
+  background-color: #FFF; }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300; }
+
+.btn-default {
+  background: none;
+  text-shadow: none;
+  border: 2px solid #DDD;
+  box-shadow: none; }
+  .btn-default:hover, .btn-default:focus, .btn-default.focus {
+    background: none;
+    border-color: #35678e;
+    color: #35678e; }
+
+/*  Headers */
+h2 {
+  color: red; }
 
 /* Header */
+.navbar {
+  border-radius: 0;
+  background: #FFF;
+  margin-bottom: 0; }
+  .navbar > .container .navbar-brand {
+    font-weight: 600;
+    color: #222;
+    background: url(../img/stm-logo.png) no-repeat 0 2px;
+    padding-left: 57px;
+    font-size: 0.875em;
+    margin-left: 10px; }
+  .navbar .navbar-form {
+    display: none; }
+
 .banner {
   background-color: aqua; }
+  .banner .banner-header {
+    text-align: center; }
+  .banner h1 {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 3.1875em;
+    color: #FFF;
+    width: 95%;
+    text-align: center; }
 
-.banner-header {
-  text-align: center; }
+/* Mission */
+.mission {
+  background: url(../img/stm-home-masthead.jpg) no-repeat #35678e center center;
+  height: 380px;
+  -webkit-background-size: cover;
+  -khtml-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; }
+  .mission h1 {
+    margin: 84px auto 0; }
+
+.app-callout {
+  background: url(../img/stm-home-app-callout.jpg) no-repeat #b3c742 center center;
+  height: 380px;
+  -webkit-background-size: cover;
+  -khtml-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; }
+  .app-callout h1 {
+    text-align: left;
+    margin-top: 84px; }
+  .app-callout p {
+    color: #FFF;
+    font-weight: 300; }
+  .app-callout a {
+    color: #FFF; }
+  .app-callout .google-play-badge a {
+    display: block;
+    background: url(../img/google-play-badge.png) no-repeat;
+    width: 172px;
+    height: 60px; }
+  .app-callout .btn-default {
+    color: #FFF;
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-color: #FFF;
+    margin-left: 15px; }
+    .app-callout .btn-default:hover, .app-callout .btn-default:focus, .app-callout .btn-default.focus {
+      background: #FFF;
+      color: #35678e; }
 
 .featured-item-panel > .panel-body {
   background-color: aqua; }
