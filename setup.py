@@ -60,6 +60,9 @@ try:
             "requests-oauthlib >= 0.4",
             "future == 0.9.0",
             "pillow",
+            "djangorestframework",
+            "markdown",
+            "django-filter"
         ],
         entry_points="""
             [console_scripts]
