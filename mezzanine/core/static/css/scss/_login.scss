@@ -1,0 +1,94 @@
+
+#account {
+    
+    .main {
+        
+        background: url(../img/stm-login-background.jpg) no-repeat $orange center center;
+        @include prefix( background-size, cover);
+    }
+    
+    .account-login {
+        
+        padding: 100px 0;
+        
+        legend {
+            
+            border: none;
+            color: #FFF;
+            font-size: pem(24);
+        }
+        
+        label {
+            
+            font-size: pem(14);
+            color: #FFF;
+        }
+        
+        .input-xlarge,
+        #id_email {
+            
+            width: 100%;
+            max-width: none;
+        }
+        
+        .form-actions {
+            
+            background: none;
+            border: none;
+            padding: 0;
+        }
+        
+        .btn-default {
+            
+            border-color: #FFF;
+            color: #FFF;
+            
+            &:hover,
+            &:focus,
+            &.focus {
+            
+                background: #FFF;
+                border-color: #FFF;
+                color: $orange;
+            } 
+        }
+        
+        p.help-block {
+            
+            color: #FFF;
+            font-size: pem(12);
+            font-weight: 400;
+            text-align: center;    
+        }
+    }
+    
+    .login-notes {
+        
+        padding-bottom: 20px;
+        
+        p {
+            
+            color: #FFF;
+            font-size: pem(12);
+            font-weight: 400;
+            text-align: center;
+            margin: 0;
+            
+            a {
+                    
+                &:link,
+                &:active,
+                &:visited {
+                
+                	color: #FFF;
+                	font-weight: 600;
+                }
+            
+                &:hover {
+                    
+                    color: #FFF;
+                }
+            }
+        }
+    }
+}

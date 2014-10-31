@@ -7,6 +7,7 @@ $black: #222;
 $green: #b3c742;
 $blue: #35678e;
 $grey: #DDD;
+$orange: #f17534;
 
 $highlight: $blue;
 
@@ -49,6 +50,26 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
         color: $highlight;
     }    
 }
+
+.btn-primary {
+    
+    background: $blue;
+    text-shadow: none;
+    border: 2px solid transparent;
+    box-shadow: none;
+    
+    &:hover,
+    &:focus,
+    &.focus {
+        
+        background: none;
+        border-color: $highlight;
+        color: $highlight;
+    }    
+}
+
+
+
 
 /*  Headers */
 
@@ -175,6 +196,11 @@ h2 {
         } 
     }
 }
+
+
+/* Account Login/Signin */
+
+@import 'login';
 
 
 

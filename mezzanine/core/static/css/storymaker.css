@@ -28,9 +28,19 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .btn-default {
   background: none;
   text-shadow: none;
-  border: 2px solid #DDD;
+  border: 2px solid #dddddd;
   box-shadow: none; }
   .btn-default:hover, .btn-default:focus, .btn-default.focus {
+    background: none;
+    border-color: #35678e;
+    color: #35678e; }
+
+.btn-primary {
+  background: #35678e;
+  text-shadow: none;
+  border: 2px solid transparent;
+  box-shadow: none; }
+  .btn-primary:hover, .btn-primary:focus, .btn-primary.focus {
     background: none;
     border-color: #35678e;
     color: #35678e; }
@@ -46,7 +56,7 @@ h2 {
   margin-bottom: 0; }
   .navbar > .container .navbar-brand {
     font-weight: 600;
-    color: #222;
+    color: #222222;
     background: url(../img/stm-logo.png) no-repeat 0 2px;
     padding-left: 57px;
     font-size: 0.875em;
@@ -111,6 +121,58 @@ h2 {
     .app-callout .btn-default:hover, .app-callout .btn-default:focus, .app-callout .btn-default.focus {
       background: #FFF;
       color: #35678e; }
+
+/* Account Login/Signin */
+#account .main {
+  background: url(../img/stm-login-background.jpg) no-repeat #f17534 center center;
+  -webkit-background-size: cover;
+  -khtml-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover; }
+#account .account-login {
+  padding: 100px 0; }
+  #account .account-login legend {
+    border: none;
+    color: #FFF;
+    font-size: 1.5em; }
+  #account .account-login label {
+    font-size: 0.875em;
+    color: #FFF; }
+  #account .account-login .input-xlarge,
+  #account .account-login #id_email {
+    width: 100%;
+    max-width: none; }
+  #account .account-login .form-actions {
+    background: none;
+    border: none;
+    padding: 0; }
+  #account .account-login .btn-default {
+    border-color: #FFF;
+    color: #FFF; }
+    #account .account-login .btn-default:hover, #account .account-login .btn-default:focus, #account .account-login .btn-default.focus {
+      background: #FFF;
+      border-color: #FFF;
+      color: #f17534; }
+  #account .account-login p.help-block {
+    color: #FFF;
+    font-size: 0.75em;
+    font-weight: 400;
+    text-align: center; }
+#account .login-notes {
+  padding-bottom: 20px; }
+  #account .login-notes p {
+    color: #FFF;
+    font-size: 0.75em;
+    font-weight: 400;
+    text-align: center;
+    margin: 0; }
+    #account .login-notes p a:link, #account .login-notes p a:active, #account .login-notes p a:visited {
+      color: #FFF;
+      font-weight: 600; }
+    #account .login-notes p a:hover {
+      color: #FFF; }
 
 .featured-item-panel > .panel-body {
   background-color: aqua; }
@@ -247,5 +309,3 @@ hr {
   overflow: hidden;
   width: 100%;
   height: 100%; }
-
-/*# sourceMappingURL=storymaker.css.map */
