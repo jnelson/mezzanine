@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
-{% load pages_tags mezzanine_tags i18n future staticfiles %}
+{% load pages_tags mezzanine_tags i18n future staticfiles blog_tags keyword_tags disqus_tags activity_tags %}
 
 {% if request.user.is_authenticated %}
 <head>
@@ -133,133 +133,40 @@
 		
 	</div>
 </div>	
+{% endblocktrans %}
 
 <div class="container">
 
-	<div class="row">
-		<div class="col-md-7">
-			<div class="panel featured-item-panel">
-				<div class="panel-heading">
-					<h1>Making Prayer Beads in Erbil</h1>
-				</div>
-
-				<div class="panel-body">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida nunc in mauris gravida, at fermentum.
-				</div>
-
-				<div class="panel-footer">
-					<p>October 2nd, 2014 from <b>Iraq</b></p>
-				</div>
+<div class="row"><!-- Recent Posts -->
+{% load blog_tags keyword_tags i18n %}
+{% blog_recent_posts 5 as recent_posts %}
+{% if recent_posts %}
+{% for recent_post in recent_posts %}
+	<div class="{% cycle "col-md-5" "col-md-7" "col-md-7" "col-md-5" %}">
+		<div class="panel featured-item-panel" 
+			style="{% if settings.BLOG_USE_FEATURED_IMAGE and recent_post.featured_image %}background-image:url('{{MEDIA_URL}}{{recent_post.featured_image}}');{% endif %}"> <!--EXPL: adds featured blog image as panel background-->
+			<div class="panel-heading">
+				<h1><a href="{{ recent_post.get_absolute_url }}">{{ recent_post.title }}</a></h1>
 			</div>
-		</div>
 
-		<div class="col-md-5">
-			<div class="panel featured-item-panel">
-				<div class="panel-heading">
-					<h1>Lorem Ipsum</h1>
+			<div class="panel-body">
+				<div class="featured-item-description">
+					{{ recent_post.description|slice:":255" }}
 				</div>
 
-				<div class="panel-body">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida nunc in mauris gravida, at fermentum.
-				</div>
-
-				<div class="panel-footer">
-					<p>October 2nd, 2014 from <b>Iraq</b></p>
-				</div>
+	    		<a href="{{ recent_post.get_absolute_url }}" class="label label-inverse">{% trans "read more&hellip;" %}</a>
 			</div>
-		</div>
 
-		<div class="col-md-5">
-			<div class="panel featured-item-panel">
-				<div class="panel-heading">
-					<h1>Lorem Ipsum Dolor</h1>
-				</div>
-
-				<div class="panel-body">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida nunc in mauris gravida, at fermentum.
-				</div>
-
-				<div class="panel-footer">
-					<p>October 2nd, 2014 from <b>Iraq</b></p>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-md-7">
-			<div class="panel featured-item-panel">
-				<div class="panel-heading">
-					<h1>Lorem Ipsum Dolor Slideshow</h1>
-				</div>
-
-				<div class="panel-body">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida nunc in mauris gravida, at fermentum.
-				</div>
-
-				<div class="panel-footer">
-					<p>October 2nd, 2014 from <b>Iraq</b></p>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-md-7">
-			<div class="panel featured-item-panel">
-				<div class="panel-heading">
-					<h1>Making Prayer Beads in Erbil</h1>
-				</div>
-
-				<div class="panel-body">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida nunc in mauris gravida, at fermentum.
-				</div>
-
-				<div class="panel-footer">
-					<p>October 2nd, 2014 from <b>Iraq</b></p>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-md-5">
-			<div class="panel featured-item-panel">
-				<div class="panel-heading">
-					<h1>Lorem Ipsum</h1>
-				</div>
-
-				<div class="panel-body">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida nunc in mauris gravida, at fermentum.
-				</div>
-
-				<div class="panel-footer">
-					<p>October 2nd, 2014 from <b>Iraq</b></p>
-				</div>
+			<div class="panel-footer">
+				<p>{{ recent_post.publish_date|date:"F jS, Y" }}</p>
 			</div>
 		</div>
 	</div>
-</div>
-<!--
-	<div class="row">
-		<div class="col-md-12 banner container">
-			<div class="row">
-				<div class="col-md-12">
-					<h1>Learn. Make. Share.</h1>
-				</div>
-			</div>
-			
-			<div class="row">
-			<div class="col-md-6">
-				<p>Produce and publish professional-grade news with your Android phone, as safely and securely as possible.</p>
-			</div>
+{% endfor %}
+{% endif %}
+</div><!-- /Recent Posts -->
 
-			<div class="col-md-6">
-				<a href="http://play.google.com">Get it on Googleplay.</a>
-			</div>
-			</div>
-
-			<div class="row">
-				<a class="col-md-12">Learn More</a>
-			</div>
-		</div>
-	</div>
--->
-	
+{% blocktrans %}
 	
 <div class="container-fluid banner app-callout">
 	<div class="row">
@@ -287,12 +194,9 @@
     	</div>
 		
 	</div>
-</div>	
-	
-	
+</div>
 	
 <div class="container">
-
 	<div class="row">
 		<h2>Featured Story Makers</h2>
 	</div>
@@ -411,7 +315,6 @@
 		</div>
 
 		<div class="col-md-5 container">
-
 			<h3>StoryMaker is supported by</h3>
 
 			<div class="row">
@@ -438,21 +341,6 @@
 {% endblocktrans %}
 {% endblock %}
 </div>
-
-<!-- <div class="col-md-3 right">
-    {% nevercache %}
-    {% include "includes/user_panel.html" %}
-    {% endnevercache %}
-    <div class="panel panel-default">
-    <div class="panel-body">
-    {% block right_panel %}
-    {% ifinstalled mezzanine.twitter %}
-    {% include "twitter/tweets.html" %}
-    {% endifinstalled %}
-    {% endblock %}
-    </div>
-    </div>
-</div> -->
 
 </div>
 </div>
