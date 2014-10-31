@@ -377,6 +377,14 @@ except ImportError:
 else:
     set_dynamic_settings(globals())
 
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
+
 
 SITE_TITLE="StoryMaker.org"
 SITE_TAGLINE=""
