@@ -249,6 +249,8 @@ INSTALLED_APPS = (
     "django.contrib.sitemaps",
     "django.contrib.staticfiles",
     "rest_framework",
+    "provider",
+    "provider.oauth2",
     "project_template",
     "mezzanine.boot",
     "mezzanine.conf",
@@ -377,12 +379,17 @@ except ImportError:
 else:
     set_dynamic_settings(globals())
 
+###########################
+# REST FRAMEWORK SETTINGS #
+###########################
+
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.OAuth2Authentication',
+    ),
 }
 
 
