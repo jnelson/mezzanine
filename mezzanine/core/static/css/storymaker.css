@@ -178,8 +178,7 @@ h2 {
   background-color: aqua; }
 
 .featured-item-panel > .panel-body > .featured-item-description {
-    height: 100px;
-}
+  height: 100px; }
 
 .featured-story-maker {
   padding-bottom: 30px; }
