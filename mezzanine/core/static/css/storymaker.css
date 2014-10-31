@@ -51,8 +51,8 @@ h2 {
     padding-left: 57px;
     font-size: 0.875em;
     margin-left: 10px; }
-  .navbar .navbar-form {
-    display: none; }
+  .navbar .navbar-form form, .navbar .navbar-form .user-panel {
+    display: inline; }
 
 .banner {
   background-color: aqua; }

@@ -79,7 +79,10 @@ h2 {
     
     .navbar-form {
         
-        display: none; //Temporary
+        form, .user-panel {
+            
+            display: inline;
+        }
     }
 }
 
