@@ -19,7 +19,7 @@
 {% if page %}
 {% editable page.title %}{{ page.title }}{% endeditable %}
 {% else %}
-{% trans "Blog" %}
+{% trans "Your Stream" %}
 {% endif %}
 {% endblock %}
 
@@ -42,6 +42,18 @@
 {% endblock %}
 
 {% block main %}
+
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <h4>Your Stream</h4>
+    </div>
+
+    <div class="col-md-offset-4 col-md-4">
+        <h4>Notifications (4)</h4>
+    </div>
+</div>
+
 
 {% if tag or category or year or month or author %}
     {% block blog_post_list_filterinfo %}
