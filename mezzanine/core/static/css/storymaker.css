@@ -7,7 +7,7 @@
   .clearfix:after {
     clear: both; }
 
-.text-replacement, .app-callout .google-play-badge a {
+.text-replacement, .app-callout .google-play-badge a, .stm-supported-by .story-maker-supporter-link {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden; }
@@ -213,6 +213,41 @@ footer .site-info {
   .featured-story-maker .featured-story-maker-portrait {
     text-align: center; }
 
+/* About Footer */
+.stm-footer-about p {
+  font-size: 0.875em;
+  line-height: 1.42857em; }
+.stm-footer-about ul {
+  list-style: none;
+  padding-left: 0; }
+  .stm-footer-about ul li {
+    margin-right: 10px;
+    display: inline; }
+
+.stm-supported-by h2 {
+  margin-top: 0;
+  margin-bottom: 20px; }
+.stm-supported-by .story-maker-supporter-link {
+  display: block;
+  text-indent: 200%;
+  padding: 0; }
+  .stm-supported-by .story-maker-supporter-link.stm-small-world-news {
+    width: 179px;
+    height: 36px;
+    background: url(../img/stm-small-world-news.gif) no-repeat; }
+  .stm-supported-by .story-maker-supporter-link.stm-guardian {
+    width: 205px;
+    height: 95px;
+    background: url(../img/stm-guardian-logo.gif) no-repeat; }
+  .stm-supported-by .story-maker-supporter-link.stm-free-press {
+    width: 244px;
+    height: 95px;
+    background: url(../img/stm-free-press-logo.gif) no-repeat; }
+  .stm-supported-by .story-maker-supporter-link.stm-open-tech {
+    width: 244px;
+    height: 36px;
+    background: url(../img/stm-open-technology.gif) no-repeat; }
+
 /* Account Login/Signin */
 #account .stm-sidebar {
   display: none; }
@@ -268,46 +303,5 @@ footer .site-info {
       color: #FFF; }
 #account footer {
   margin-top: 0; }
-
-/*
-// Original
-
-
-.featured-item-panel{
-
-}
-
-.featured-item-panel > .panel-heading{
-
-}
-
-.featured-item-panel > .panel-body{
-    background-color:aqua;
-}
-
-.featured-item-panel > .panel-body > .featured-item-description {
-    height: 100px;
-}
-
-.featured-item-panel > .panel-footer{
-
-}
-*/
-.story-maker-supporter-link {
-  background-color: gray;
-  height: 40px;
-  display: block;
-  margin-bottom: 10px; }
-
-.story-maker-supporter-link {
-  background-color: gray;
-  height: 40px;
-  display: block;
-  margin-bottom: 10px; }
-
-.user-portrait {
-  overflow: hidden;
-  width: 100%;
-  height: 100%; }
 
 /*# sourceMappingURL=storymaker.css.map */

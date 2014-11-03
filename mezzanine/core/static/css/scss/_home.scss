@@ -165,6 +165,74 @@
 }
 
 
+/* About Footer */
+
+.stm-footer-about {
+    
+    p {
+        
+        font-size: pem(14);
+        line-height: pem(20, 14);
+    }
+    
+    ul {
+        
+        list-style: none;
+        padding-left: 0;
+        
+        li {
+            
+            margin-right: 10px;
+            display: inline;
+        }
+    }
+}
+
+.stm-supported-by {
+    
+    h2 {
+        
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    
+    .story-maker-supporter-link {
+        
+        display: block;
+        @extend .text-replacement;
+        text-indent: 200%; 
+        padding: 0;
+    
+        &.stm-small-world-news {
+            
+            width: 179px;
+            height: 36px;
+            background: url(../img/stm-small-world-news.gif) no-repeat;
+        }
+        
+        &.stm-guardian {
+            
+            width: 205px;
+            height: 95px;
+            background: url(../img/stm-guardian-logo.gif) no-repeat;
+        }
+        
+        &.stm-free-press {
+            
+            width: 244px;
+            height: 95px;
+            background: url(../img/stm-free-press-logo.gif) no-repeat;
+        }
+        
+        &.stm-open-tech {
+            
+            width: 244px;
+            height: 36px;
+            background: url(../img/stm-open-technology.gif) no-repeat;
+        }
+    }
+}
+
 
 
 
