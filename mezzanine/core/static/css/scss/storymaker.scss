@@ -14,8 +14,8 @@ $highlight: $blue;
 // Fonts
 $openSansStack: 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
-/* Core */
 
+/* Core */
 
 body {
 
@@ -32,6 +32,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     
     font-family: $openSansStack; 
     font-weight: 300;
+}
+
+.no-gutter [class*="-5"],
+.no-gutter [class*="-7"] {
+	
+	padding-left:0;
+    padding-right:0;
 }
 
 .btn-default {
@@ -67,8 +74,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
         color: $highlight;
     }    
 }
-
-
 
 
 /*  Headers */
@@ -123,6 +128,7 @@ h2 {
     }   
 }
 
+
 /* Footer */
 
 footer {
@@ -172,97 +178,9 @@ footer {
 }
 
 
-/* Home */
+/* Account Login/Signin */
 
-.banner {
-
-    background-color:aqua;
-    
-    .banner-header {
-        
-        text-align: center;
-    }
-    
-    h1 {
-        
-        font-family: $openSansStack;
-        font-weight: 300;
-        font-size: pem(51);
-        color: #FFF;
-        width: 95%;
-        text-align: center;
-    }
-}
-
-
-/* Mission */
-
-.mission {
-    
-    background: url(../img/stm-home-masthead.jpg) no-repeat $blue center center;
-    height: 380px;
-    @include prefix( background-size, cover);
-
-    h1 {
-        
-        margin: 84px auto 0;
-    }
-}
-
-.app-callout {
-    
-    background: url(../img/stm-home-app-callout.jpg) no-repeat $green center center;
-    height: 380px;
-    @include prefix( background-size, cover);
-    
-    h1 {
-        
-        text-align: left;
-        margin-top: 84px;
-    }
-    
-    p {
-        
-        color: #FFF;
-        font-weight: 300;
-    }
-    
-    a {
-        
-        color: #FFF;
-    }
-    
-    .google-play-badge {
-
-        a {
-            
-            display: block;
-            background: url(../img/google-play-badge.png) no-repeat;
-            width: 172px;
-            height: 60px;
-                        
-            @extend .text-replacement;  
-        }
-    }
-    
-    .btn-default {
-        
-        color: #FFF;
-        width: auto;
-        padding-left: 20px;
-        padding-right: 20px;
-        border-color: #FFF;
-        margin-left: 15px;
-        
-        &:hover,
-        &:focus,
-        &.focus {
-            
-            background: #FFF;
-            color: $highlight;
-        } 
-    }
-}
+@import 'home';
 
 
 /* Account Login/Signin */
@@ -276,6 +194,7 @@ footer {
 
 
 
+/*
 // Original
 
 
@@ -298,6 +217,13 @@ footer {
 .featured-item-panel > .panel-footer{
 
 }
+*/
+
+
+
+
+
+
 
 .featured-story-maker{
     padding-bottom:30px;
