@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .btn-default {
   background: none;
   text-shadow: none;
-  border: 2px solid #dddddd;
+  border: 2px solid #DDD;
   box-shadow: none; }
   .btn-default:hover, .btn-default:focus, .btn-default.focus {
     background: none;
@@ -52,7 +52,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 /*  Headers */
 h2 {
-  color: red; }
+  font-size: 0.875em;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.2em; }
 
 /* Header */
 .navbar {
@@ -62,7 +65,7 @@ h2 {
   box-shadow: none; }
   .navbar > .container .navbar-brand {
     font-weight: 600;
-    color: #222222;
+    color: #222;
     background: url(../img/stm-logo.png) no-repeat 0 2px;
     padding-left: 57px;
     font-size: 0.875em;
@@ -72,7 +75,7 @@ h2 {
   .navbar .user-panel a {
     font-size: 0.75em;
     font-weight: 400;
-    color: #222222; }
+    color: #222; }
   .navbar .user-panel p {
     display: inline; }
 
@@ -87,16 +90,16 @@ footer .nav-footer {
     footer .nav-footer ul li {
       padding-right: 30px; }
   footer .nav-footer a {
-    color: #222222; }
+    color: #222; }
 footer .site-info {
   margin: 0;
   font-size: 0.75em;
   font-weight: 400; }
   footer .site-info a {
     font-weight: 600;
-    color: #222222; }
+    color: #222; }
   footer .site-info .separator {
-    color: #222222; }
+    color: #222; }
 
 /* Account Login/Signin */
 /* Home */
@@ -160,31 +163,55 @@ footer .site-info {
 
 /* Panels */
 .featured-item-panel {
-  background: #EEE;
-  min-height: 350px;
-  border-radius: 0;
-  box-shadow: none;
-  border: none;
-  background-color: #f17534;
-  /* Fallback Color */
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#852b4e), to(#f17534));
-  /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, #852b4e, #f17534);
-  /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background-image: -moz-linear-gradient(top, #852b4e, #f17534);
-  /* FF3.6 */
-  background-image: -ms-linear-gradient(top, #852b4e, #f17534);
-  /* IE10 */
-  background-image: -o-linear-gradient(top, #852b4e, #f17534);
-  /* Opera 11.10+ */
-  background-image: linear-gradient(top, #852b4e, #f17534);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#852b4e', EndColorStr='#f17534'); }
-  .featured-item-panel .panel-meta {
-    position: absolute;
-    bottom: 20px; }
-    .featured-item-panel .panel-meta .panel-footer {
-      background: none;
-      border: none; }
+  /*
+      background: #EEE;
+      min-height: 350px;
+      border-radius: 0;
+      box-shadow: none;
+      border: none;
+  
+      .panel-meta {
+          
+          position: absolute;
+          bottom: 20px;
+          
+          .panel-footer {
+              
+              background: none;
+              border: none;    
+          }
+      }
+      
+      @include linear-gradient(#852b4e, $orange);
+      
+  */ }
+
+/* Makers List */
+.featured-story-makers h2 {
+  text-align: center;
+  margin: 60px 0; }
+
+.featured-story-maker {
+  text-align: center;
+  padding-bottom: 40px; }
+  .featured-story-maker h1 {
+    text-align: center;
+    font-size: 1.125em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+    margin-bottom: 10px; }
+  .featured-story-maker p {
+    font-size: 0.875em;
+    line-height: 1.28571em;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 1.125em; }
+  .featured-story-maker button {
+    width: 80%; }
+  .featured-story-maker .featured-story-maker-portrait {
+    text-align: center; }
 
 /* Account Login/Signin */
 #account .stm-sidebar {
@@ -242,23 +269,30 @@ footer .site-info {
 #account footer {
   margin-top: 0; }
 
-.featured-story-maker {
-  padding-bottom: 30px; }
+/*
+// Original
 
-.featured-story-maker > h1 {
-  text-align: center; }
 
-.featured-story-maker > p {
-  text-align: center; }
+.featured-item-panel{
 
-.featured-story-maker > button {
-  width: 100%; }
+}
 
-.featured-story-maker-portrait > img {
-  overflow: hidden;
-  width: 100%;
-  height: 100%; }
+.featured-item-panel > .panel-heading{
 
+}
+
+.featured-item-panel > .panel-body{
+    background-color:aqua;
+}
+
+.featured-item-panel > .panel-body > .featured-item-description {
+    height: 100px;
+}
+
+.featured-item-panel > .panel-footer{
+
+}
+*/
 .story-maker-supporter-link {
   background-color: gray;
   height: 40px;
@@ -275,3 +309,5 @@ footer .site-info {
   overflow: hidden;
   width: 100%;
   height: 100%; }
+
+/*# sourceMappingURL=storymaker.css.map */
