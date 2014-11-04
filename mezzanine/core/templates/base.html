@@ -100,7 +100,7 @@
 <div class="container-fluid main">
 <div class="row">
 
-<div class="col-md-2 left">
+<div class="col-md-2 left stm-sidebar">
     {% block left_panel %}
         {% if request.user.is_authenticated %}
             <div class="row">
@@ -191,7 +191,7 @@
     {% endblock %}
 </div>
 
-<div class="col-md-7 middle">
+<div class="col-md-10 middle">
     {% block main %}{% endblock %}
 </div>
 
@@ -215,23 +215,31 @@
 
 <footer>
 <div class="container">
-{% page_menu "pages/menus/footer.html" %}
+    
+    <div class="row">        
+        <div class="col-md-12">
+            {% page_menu "pages/menus/footer.html" %}  
+        </div>
+    </div>
 
-<div class="row">
-<p class="site-info text-center">
-    {% trans "Powered by" %}
-    <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},
-    <a href="http://cartridge.jupo.org">Cartridge</a>{% endifinstalled %}
-    {% trans "and" %}
-    <a href="http://www.djangoproject.com">Django</a>
-    <span class="separator">|</span>
-    {% trans "Theme by" %} <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>
-    {% ifinstalled mezzanine.mobile %}
-    <span class="separator">|</span>
-    <a href="{% url "set_device" "mobile" %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>
-    {% endifinstalled %}
-</p>
-</div>
+    <div class="row">        
+        <div class="col-md-12">        
+            <p class="site-info">
+                {% trans "Powered by" %}
+                <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},
+                <a href="http://cartridge.jupo.org">Cartridge</a>{% endifinstalled %}
+                {% trans "and" %}
+                <a href="http://www.djangoproject.com">Django</a>
+                <span class="separator">|</span>
+                {% trans "Theme by" %} <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>
+                {% ifinstalled mezzanine.mobile %}
+                <span class="separator">|</span>
+                <a href="{% url "set_device" "mobile" %}?next={{ request.path }}">{% trans "View Mobile Site" %}</a>
+                {% endifinstalled %}
+            </p>
+        </div>
+    </div>
+
 </div>
 </footer>
 

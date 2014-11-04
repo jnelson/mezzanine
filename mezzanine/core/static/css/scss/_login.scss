@@ -1,6 +1,14 @@
 
 #account {
     
+    
+    // This hides the about/nav sidebar. We don't wnat to show
+    // that on the login/signup pages.
+    .stm-sidebar {
+        
+        display: none;
+    }
+    
     .main {
         
         background: url(../img/stm-login-background.jpg) no-repeat $orange center center;
@@ -90,5 +98,10 @@
                 }
             }
         }
+    }
+    
+    footer {
+        
+        margin-top: 0;
     }
 }

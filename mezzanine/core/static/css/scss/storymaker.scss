@@ -14,8 +14,8 @@ $highlight: $blue;
 // Fonts
 $openSansStack: 'Open Sans', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
-/* Core */
 
+/* Core */
 
 body {
 
@@ -32,6 +32,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     
     font-family: $openSansStack; 
     font-weight: 300;
+}
+
+.no-gutter [class*="-5"],
+.no-gutter [class*="-7"] {
+	
+	padding-left:0;
+    padding-right:0;
 }
 
 .btn-default {
@@ -69,8 +76,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 
-
-
 /*  Headers */
 
 h2 {
@@ -86,6 +91,7 @@ h2 {
     border-radius: 0;
     background: #FFF;
     margin-bottom: 0;
+    box-shadow: none;
     
     > .container .navbar-brand {
         
@@ -105,97 +111,76 @@ h2 {
             display: inline;
         }
     }
-}
-
-.banner {
-
-    background-color:aqua;
     
-    .banner-header {
+    .user-panel {
         
-        text-align: center;
-    }
-    
-    h1 {
-        
-        font-family: $openSansStack;
-        font-weight: 300;
-        font-size: pem(51);
-        color: #FFF;
-        width: 95%;
-        text-align: center;
-    }
-}
-
-
-/* Mission */
-
-.mission {
-    
-    background: url(../img/stm-home-masthead.jpg) no-repeat $blue center center;
-    height: 380px;
-    @include prefix( background-size, cover);
-
-    h1 {
-        
-        margin: 84px auto 0;
-    }
-}
-
-.app-callout {
-    
-    background: url(../img/stm-home-app-callout.jpg) no-repeat $green center center;
-    height: 380px;
-    @include prefix( background-size, cover);
-    
-    h1 {
-        
-        text-align: left;
-        margin-top: 84px;
-    }
-    
-    p {
-        
-        color: #FFF;
-        font-weight: 300;
-    }
-    
-    a {
-        
-        color: #FFF;
-    }
-    
-    .google-play-badge {
-
         a {
             
-            display: block;
-            background: url(../img/google-play-badge.png) no-repeat;
-            width: 172px;
-            height: 60px;
-                        
-            @extend .text-replacement;  
+            font-size: pem(12);
+            font-weight: 400;
+            color: $black;
+        }
+        
+        p {
+            
+            display: inline;
+        }
+    }   
+}
+
+
+/* Footer */
+
+footer {
+    
+    .nav-footer {
+        
+        margin: 0;
+        
+        ul {
+            
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: auto;
+            
+            li {
+                
+                padding-right: 30px;
+            }
+        }
+        
+        a {
+            
+        //    font-weight: 600;
+            color: $black;
         }
     }
     
-    .btn-default {
+    .site-info {
         
-        color: #FFF;
-        width: auto;
-        padding-left: 20px;
-        padding-right: 20px;
-        border-color: #FFF;
-        margin-left: 15px;
+        margin: 0;
+        font-size: pem(12);
+        font-weight: 400;
         
-        &:hover,
-        &:focus,
-        &.focus {
+        a {
             
-            background: #FFF;
-            color: $highlight;
-        } 
+            font-weight: 600;
+            color: $black;
+        }
+        
+        .separator {
+            
+            color: $black;
+        }
     }
+    
 }
+
+
+/* Account Login/Signin */
+
+@import 'home';
 
 
 /* Account Login/Signin */
@@ -204,6 +189,13 @@ h2 {
 
 
 
+
+
+
+
+
+/*
+// Original
 
 
 .featured-item-panel{
@@ -225,6 +217,13 @@ h2 {
 .featured-item-panel > .panel-footer{
 
 }
+*/
+
+
+
+
+
+
 
 .featured-story-maker{
     padding-bottom:30px;
@@ -254,111 +253,6 @@ h2 {
     display:block;
     margin-bottom:10px;
 }
-
-
-
-
-
-/*
-body, html {
-    
-    width: 100%;
-    height: 100%;
-}
-
-body {
-
-   font-family: $sansStack; 
-   font-weight: 300;
-   font-size: 100%;
-   position: relative;	
-   background-color: #FFF;
-   
-    &.clip .container {
-        
-        height: 100%;
-        overflow: hidden;
-    }
-
-}
-*/
-
-/*
-body.scroll .container .menu {
-            
-    position: absolute;
-
-    @media screen and (max-width: $break-mid) {
-    
-        position: relative;
-    }
-}
-
-hr {
-    
-    border: none;
-    border-top: $border;
-}
-
-.container {
-    
-    width: 100%;
-    position: relative;
-    
-    h1 {
-        
-        font-family: $sansStack;
-        font-weight: 700;
-        
-        @include prefix( transition, color 230ms );
-    }
-    
-    p {
-    
-        font-size: pem(15);
-        line-height: pem(20, 15);
-        padding: 0 0 pem(20, 15);
-        font-family: $minionStack;
-        -webkit-font-smoothing: subpixel-antialiased;
-        
-        strong {
-            
-            font-weight: normal;
-            color: $red;
-            
-            @include prefix( transition, color 230ms );
-        }
-        
-        a {
-            
-            text-decoration: none;
-        	border-bottom: 1px solid $blue;
-        }           	
-    }
-    
-    a {
-                        
-        &:link,
-        &:active,
-        &:visited {
-        
-        	color: #000;
-        }
-    
-        &:hover {
-            
-            color: $blue;
-        }
-    }
-    
-    a.button {
-        
-        display: block;
-        padding: pem(10) pem(20);
-        text-decoration: none;
-    
-    }
-*/
 
 .story-maker-supporter-link{
     background-color:gray;
