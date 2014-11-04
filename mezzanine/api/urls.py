@@ -16,4 +16,3 @@ urlpatterns += patterns("mezzanine.api.views",
 
     url(r'^oauth2/', include('provider.oauth2.urls', namespace='oauth2')),
 )
-
