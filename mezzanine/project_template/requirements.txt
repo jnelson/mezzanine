@@ -1,7 +1,7 @@
 Django==1.7
 Fabric==1.10.0
 Markdown==2.5.1
--e git+https://github.com/scalio/mezzanine.git@fbdf3cbc217f2313af660d59eb3833bd3f9e124c#egg=Mezzanine-storymaker
+file:../mezzanine#egg=Mezzanine-storymaker
 Pillow==2.6.0
 Pygments==1.6
 argparse==1.2.1
