@@ -8,6 +8,7 @@ $green: #b3c742;
 $blue: #35678e;
 $grey: #DDD;
 $orange: #f17534;
+$rule: #e7e7e7;
 
 $highlight: $blue;
 
@@ -39,6 +40,18 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	
 	padding-left:0;
     padding-right:0;
+}
+
+a {
+    
+    color: $highlight;
+    
+    &:hover,
+    &:focus,
+    &.focus {
+        
+        
+    }   
 }
 
 .btn-default {
@@ -75,12 +88,20 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     }    
 }
 
+.main {
+    
+    padding: 0 15px;
+}
+
 
 /*  Headers */
 
 h2 {
     
-    color: red;
+    font-size: pem(14);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.2em;
 }
 
 
@@ -92,6 +113,8 @@ h2 {
     background: #FFF;
     margin-bottom: 0;
     box-shadow: none;
+    border-left: 0;
+    border-right: 0;
     
     > .container .navbar-brand {
         
@@ -126,6 +149,40 @@ h2 {
             display: inline;
         }
     }   
+}
+
+
+/* Sidebar */
+
+.stm-sidebar {
+    
+    border-right: 1px solid $rule;
+    
+    .panel {
+        
+        border-radius: 0;
+        border: none;
+        box-shadow: none;
+        padding-top: 20px;
+    }
+    
+    .nav-list {
+                
+        li {
+            
+            &.active a,
+            a:hover {
+                
+                background: none;
+            }
+            
+            a:hover {
+                
+                color: $orange;
+            }
+        }
+    }
+    
 }
 
 
@@ -173,8 +230,7 @@ footer {
             
             color: $black;
         }
-    }
-    
+    }   
 }
 
 
@@ -188,81 +244,12 @@ footer {
 @import 'login';
 
 
+/* Dashboard */
+
+@import 'dashboard';
 
 
 
 
 
 
-/*
-// Original
-
-
-.featured-item-panel{
-
-}
-
-.featured-item-panel > .panel-heading{
-
-}
-
-.featured-item-panel > .panel-body{
-    background-color:aqua;
-}
-
-.featured-item-panel > .panel-body > .featured-item-description {
-    height: 100px;
-}
-
-.featured-item-panel > .panel-footer{
-
-}
-*/
-
-
-
-
-
-
-
-.featured-story-maker{
-    padding-bottom:30px;
-}
-
-.featured-story-maker > h1{
-    text-align:center;
-}
-
-.featured-story-maker > p{
-    text-align:center;
-}
-
-.featured-story-maker > button{
-    width:100%;
-}
-
-.featured-story-maker-portrait > img{
-    overflow:hidden;
-    width:100%;
-    height:100%;
-}
-
-.story-maker-supporter-link{
-    background-color:gray;
-    height:40px;
-    display:block;
-    margin-bottom:10px;
-}
-
-.story-maker-supporter-link{
-    background-color:gray;
-    height:40px;
-    display:block;
-    margin-bottom:10px;
-}
-
-.user-portrait{
-    overflow:hidden;
-    width:100%;
-    height:100%;
-}

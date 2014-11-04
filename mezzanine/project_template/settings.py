@@ -110,7 +110,7 @@ ALLOWED_HOSTS = []
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Los_Angeles'
+TIME_ZONE = 'UTC'
 
 # If you set this to True, Django will use timezone-aware datetimes.
 USE_TZ = True
@@ -356,11 +356,10 @@ OPTIONAL_APPS = (
 # ignored in your version control system allowing for settings to be
 # defined per machine.
 try:
-    from local_settings import *
+    from .local_settings import *
 except ImportError as e:
     if "local_settings" not in str(e):
         raise e
-
 
 ####################
 # DYNAMIC SETTINGS #

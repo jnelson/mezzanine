@@ -98,102 +98,115 @@
 </div>
 
 <div class="container-fluid main">
-<div class="row">
-
-<div class="col-md-2 left stm-sidebar">
-    {% block left_panel %}
-        {% if request.user.is_authenticated %}
-            <div class="row">
-                <div class="col-md-12">
-                    <img class="user-portrait" src="http://i.stack.imgur.com/MG6ba.png"></img>
-                </div>
-            </div>
+    <div class="row">
+    
+        <div class="col-md-2 left stm-sidebar">
+            {% block left_panel %}
+                {% if request.user.is_authenticated %}
+                    
+                    <div class="stm-blog-profile">
+                    
+                        <div class="row stm-blog-portrait">
+                            <div class="col-md-12">
+                                <img class="user-portrait" src="/static/img/stm-avatar-blank.gif"></img>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>{% url "profile" request.user.username as profile_url %}John Doe</h1>
+                            </div>
+                        </div>
             
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>{% url "profile" request.user.username as profile_url %}</h1>
-                </div>
-            </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Followers</h4>
+                            </div>
+            
+                            <div class="col-md-6">
+                                <h4>Following</h4>
+                            </div>
+                        </div>
+            
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>320</label>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <label>320</label>
+                            </div>
+                        </div>
+            
+                        <div class="row settings-cta">
+                            <div class="col-md-12">
+                                <button class="btn btn-default">Settings</button>
+                            </div>
+                        </div>
 
-            <div class="row">
-                <div class="col-md-6">
-                    <h4>Followers</h4>
-                </div>
-
-                <div class="col-md-6">
-                    <h4>Following</h4>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                    <label>320</label>
-                </div>
-                
-                <div class="col-md-6">
-                    <label>320</label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <button>Settings</button>
-                </div>
-            </div>
-
-            <hr/>
-
-            <h3>My Groups</h3>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <img class="user-portrait" src="http://i.stack.imgur.com/MG6ba.png"></img>
-                </div>
-
-                <div class="col-md-8">
-                    <h5>Lorem Blog</h5>
-
-                    <p>Lorem ipsum dolor sit amet, consexteutur</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <img class="user-portrait" src="http://i.stack.imgur.com/MG6ba.png"></img>
-                </div>
-
-                <div class="col-md-8">
-                    <h5>Dolor sit Ameit</h5>
-
-                    <p>Lorem ipsum dolor sit amet, consexteutur</p>
-                </div>
-            </div>
-
-            <hr/>
-
-            <h3>Saved Searches</h3>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <p>Iran</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-12">
-                    <p>#work</p>
-                </div>
-            </div>
-
-            <hr/>
-        {% endif %}
-        <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
-    {% endblock %}
-</div>
-
-<div class="col-md-10 middle">
-    {% block main %}{% endblock %}
-</div>
+                    </div>
+        
+                    <hr/>
+        
+                    <div class="stm-blog-groups">
+        
+                        <h3>My Groups</h3>
+            
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="user-portrait" src="/static/img/stm-avatar-blank.gif"></img>
+                            </div>
+            
+                            <div class="col-md-9">
+                                <h5>Lorem Blog</h5>
+            
+                                <p>Lorem ipsum dolor sit amet, consexteutur</p>
+                            </div>
+                        </div>
+            
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img class="user-portrait" src="/static/img/stm-avatar-blank.gif"></img>
+                            </div>
+            
+                            <div class="col-md-9">
+                                <h5>Dolor sit Ameit</h5>
+            
+                                <p>Lorem ipsum dolor sit amet, consexteutur</p>
+                            </div>
+                        </div>
+                    
+                    </div>
+        
+                    <hr/>
+                    
+                    <div class="stm-saved-search">
+        
+                        <h3>Saved Searches</h3>
+            
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>Iran</p>
+                            </div>
+                        </div>
+            
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p>#work</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+        
+                    <hr/>
+                {% endif %}
+                <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
+            {% endblock %}
+        </div>
+        
+        <div class="col-md-10 middle">
+            {% block main %}{% endblock %}
+        </div>
 
 <!-- <div class="col-md-3 right">
     {% nevercache %}
@@ -210,7 +223,7 @@
     </div>
 </div> -->
 
-</div>
+    </div>
 </div>
 
 <footer>

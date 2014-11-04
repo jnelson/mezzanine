@@ -11,8 +11,8 @@ bugjar==0.1.0
 django-activity-stream==0.5.0
 django-braces==1.4.0
 django-filter==0.8
-django-oauth2-provider==0.2.7-dev
-djangorestframework==3.0.0
+git+https://github.com/glassresistor/django-oauth2-provider.git
+git+https://github.com/tomchristie/django-rest-framework.git@5ee472718a065497eafe8c9e7e6108e828040aee
 ecdsa==0.11
 filebrowser-safe==0.3.6
 future==0.9.0
@@ -21,6 +21,7 @@ html5lib==0.999
 oauthlib==0.6.3
 paramiko==1.15.1
 pep8==1.4.1
+psycopg2==2.5.4
 pycrypto==2.6.1
 pyflakes==0.6.1
 pytz==2014.7
@@ -30,4 +31,5 @@ shortuuid==0.4.2
 six==1.8.0
 tkreadonly==0.5.3
 tzlocal==1.0
+uWSGI==2.0.8
 wsgiref==0.1.2
