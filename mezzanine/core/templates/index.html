@@ -190,111 +190,29 @@
 		
 	</div>
 </div>
-	
+{% endblocktrans %}	
 <div class="container featured-story-makers">
 	<div>
-		<h2>Featured Story Makers</h2>
+		<h2>Featured Story Makers </h2>
 	</div>
 
 	<div class="row">
+	    {% for user in featured_users %}
 		<div class="col-sm-3 featured-story-maker">
 			<div class="featured-story-maker-portrait">
 				<img src="/static/img/stm-avatar-blank.gif"></img>
 			</div>
 
-			<h1>Lorem Blog</h1>
+			<h1>{{ user.username }}</h1>
 
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida nunc in mauris gravida</p>
 
 			<button class="btn btn-default">See Stories</button>
 		</div>
-
-		<div class="col-sm-3 featured-story-maker">
-			<div class="featured-story-maker-portrait">
-				<img src="/static/img/stm-avatar-blank.gif"></img>
-			</div>
-
-			<h1>Lorem Blog</h1>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida nunc in mauris gravida</p>
-
-			<button class="btn btn-default">See Stories</button>
-		</div>
-
-		<div class="col-sm-3 featured-story-maker">
-			<div class="featured-story-maker-portrait">
-				<img src="/static/img/stm-avatar-blank.gif"></img>
-			</div>
-
-			<h1>Lorem Blog</h1>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida nunc in mauris gravida</p>
-
-			<button class="btn btn-default">See Stories</button>
-		</div>
-
-		<div class="col-sm-3 featured-story-maker">
-			<div class="featured-story-maker-portrait">
-				<img src="/static/img/stm-avatar-blank.gif"></img>
-			</div>
-
-			<h1>Lorem Blog</h1>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida nunc in mauris gravida</p>
-
-			<button class="btn btn-default">See Stories</button>
-		</div>
-
-		<div class="col-sm-3 featured-story-maker">
-			<div class="featured-story-maker-portrait">
-				<img src="/static/img/stm-avatar-blank.gif"></img>
-			</div>
-
-			<h1>Lorem Blog</h1>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida nunc in mauris gravida</p>
-
-			<button class="btn btn-default">See Stories</button>
-		</div>
-
-		<div class="col-sm-3 featured-story-maker">
-			<div class="featured-story-maker-portrait">
-				<img src="/static/img/stm-avatar-blank.gif"></img>
-			</div>
-
-			<h1>Lorem Blog</h1>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida nunc in mauris gravida</p>
-
-			<button class="btn btn-default">See Stories</button>
-		</div>
-
-		<div class="col-sm-3 featured-story-maker">
-			<div class="featured-story-maker-portrait">
-				<img src="/static/img/stm-avatar-blank.gif"></img>
-			</div>
-
-			<h1>Lorem Blog</h1>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida nunc in mauris gravida</p>
-
-			<button class="btn btn-default">See Stories</button>
-		</div>
-
-		<div class="col-sm-3 featured-story-maker">
-			<div class="featured-story-maker-portrait">
-				<img src="/static/img/stm-avatar-blank.gif"></img>
-			</div>
-
-			<h1>Lorem Blog</h1>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida nunc in mauris gravida</p>
-
-			<button class="btn btn-default">See Stories</button>
-		</div>
+        {% endfor %}
 	</div>
 </div>
-	
+{% blocktrans %}	
 <div class="container">
 
     <hr/>
@@ -318,15 +236,21 @@
 				<div class="col-md-6">
 					<a class="story-maker-supporter-link stm-small-world-news" href="http://smallworldnews.com/">Small World News</a>
 				</div>
-                <div class="col-md-6">
-					<a class="story-maker-supporter-link stm-open-tech" href="https://www.opentechfund.org/">Open Tech Fund</a>
+				
+				<div class="col-md-6">
+					<a class="story-maker-supporter-link stm-scalio" href="http://scal.io/">Scal.io</a>
 				</div>
 				
 				<div class="col-md-6">
 					<a class="story-maker-supporter-link stm-guardian" href="http://guardianproject.info/">The Guardian Project</a>
 				</div>
+				
 				<div class="col-md-6">
 					<a class="story-maker-supporter-link stm-free-press" href="http://www.freepressunlimited.org/">Free Press Unlimited</a>
+				</div>
+				
+                <div class="col-md-6">
+					<a class="story-maker-supporter-link stm-open-tech" href="https://www.opentechfund.org/">Open Tech Fund</a>
 				</div>
 			</div>
 

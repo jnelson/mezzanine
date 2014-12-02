@@ -328,6 +328,10 @@ footer .site-info {
     width: 179px;
     height: 36px;
     background: url(../img/stm-small-world-news.gif) no-repeat; }
+  .stm-supported-by .story-maker-supporter-link.stm-scalio {
+    width: 100px;
+    height: 60px;
+    background: url(../img/stm-scalio.png) no-repeat; }
   .stm-supported-by .story-maker-supporter-link.stm-guardian {
     width: 205px;
     height: 95px;
