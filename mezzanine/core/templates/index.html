@@ -135,32 +135,26 @@
 </div>	
 {% endblocktrans %}
 
-<div class="container">
+<div class="container featured-makers">
 
     <div class="row"><!-- Recent Posts -->
     {% load blog_tags keyword_tags i18n %}
-    {% blog_recent_posts 5 as recent_posts %}
+    {% blog_recent_posts 6 as recent_posts %}
     {% if recent_posts %}
     {% for recent_post in recent_posts %}
     	<div class="{% cycle "col-md-5" "col-md-7" "col-md-7" "col-md-5" %}">
-    		<div class="panel featured-item-panel" 
-    			style="{% if settings.BLOG_USE_FEATURED_IMAGE and recent_post.featured_image %}background-image:url('{{MEDIA_URL}}{{recent_post.featured_image}}');{% endif %}"> <!--EXPL: adds featured blog image as panel background-->
-    			<div class="panel-heading">
-    				<h1><a href="{{ recent_post.get_absolute_url }}">{{ recent_post.title }}</a></h1>
-    			</div>
-    
-    			<div class="panel-body">
-    				<div class="featured-item-description">
-    					{{ recent_post.description|slice:":255" }}
-    				</div>
-    
-    	    		<a href="{{ recent_post.get_absolute_url }}" class="label label-inverse">{% trans "read more&hellip;" %}</a>
-    			</div>
-    
-    			<div class="panel-footer">
-    				<p>{{ recent_post.publish_date|date:"F jS, Y" }}</p>
-    			</div>
-    		</div>
+        		<div class="panel featured-item-panel">
+            		<a href="{{ recent_post.get_absolute_url }}" class="{% cycle "feature-blue" "feature-orange" "feature-red" "feature-green" %}">
+                		<div class="panel-heading">
+                		    <div class="panel-background" style="{% if settings.BLOG_USE_FEATURED_IMAGE and recent_post.featured_image %}background-image:url('{{MEDIA_URL}}{{recent_post.featured_image}}');{% endif %}"></div>
+        				    <h1>{{ recent_post.title }}</h1>
+        			    </div>
+        			    <div class="panel-footer">
+            			    <p>{{ recent_post.description|slice:":100" }}</p>
+            				<h3>{{ recent_post.publish_date|date:"F jS, Y" }}</h3>
+            			</div>
+            		</a>
+        		</div>		
     	</div>
     {% endfor %}
     {% endif %}

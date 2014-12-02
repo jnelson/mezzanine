@@ -92,34 +92,14 @@
 
 
 /* Panels */
-    
-.featured-item-panel {
-    
-/*
-    background: #EEE;
-    min-height: 350px;
-    border-radius: 0;
-    box-shadow: none;
-    border: none;
 
-    .panel-meta {
-        
-        position: absolute;
-        bottom: 20px;
-        
-        .panel-footer {
-            
-            background: none;
-            border: none;    
-        }
-    }
+.featured-makers {
     
-    @include linear-gradient(#852b4e, $orange);
-    
-*/
-   
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
+@import 'featured-panels';
 
 /* Makers List */
 
