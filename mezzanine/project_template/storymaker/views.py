@@ -20,9 +20,11 @@ def user_profile(request, user):
     """
         Placeholder for user profile page, etc
 
+        NOTE: This view is called directly by the UserPagesMiddleware
+        when the request matches '/<username>/...'
     """
 
-    name_len = len(user.username) + 2  # len(/<username>/) - 1
+    name_len = len(user.username) + 2  # len(/<username>/)
     path = request.path[name_len:]
 
     if path.startswith('followers'):
