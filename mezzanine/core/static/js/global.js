@@ -1,7 +1,8 @@
 $(function() {
     
-    console.log($('.navbar-brand'))
-    
+    // Wrap a span around the last part of the
+    // logotype so we can adjust it's color.
+        
     var $brand = $('.navbar-brand'),
         text = $brand.text(),
         start = text.substr(0, text.length - 4),
