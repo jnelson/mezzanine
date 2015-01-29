@@ -246,9 +246,14 @@ h2 {
 
 footer {
     
+    background: #FFF;
+    
     .nav-footer {
         
         margin: 0;
+        background: url(../img/stm-logo.png) no-repeat 0 0;
+        padding-left: 70px;
+        height: 50px;
         
         ul {
             
@@ -265,7 +270,6 @@ footer {
         
         a {
             
-        //    font-weight: 600;
             color: $black;
         }
     }
@@ -275,6 +279,7 @@ footer {
         margin: 0;
         font-size: pem(12);
         font-weight: 400;
+        padding-left: 70px;
         
         a {
             

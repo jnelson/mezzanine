@@ -1,0 +1,36 @@
+
+// Short posts used in lists like on the homepage
+
+.list-post {
+    
+    h1 {
+        
+        font-size: pem(42);
+        line-height: pem(48, 42);
+        margin-bottom: 5px;
+    }
+    
+    p {
+        
+        font-size: pem(18);
+        line-height: pem(32, 18);
+    }
+    
+    h3 {
+        
+        font-size: pem(12);
+        line-height: pem(18, 12);
+        font-weight: 600;
+        margin-top: 5px;
+        
+        span {
+            
+            text-transform: capitalize;
+        }
+    }
+    
+    img {
+        
+        width: 100%;
+    }
+}

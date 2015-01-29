@@ -108,165 +108,174 @@
 </div>
 
 <div class="container-fluid">
-<div>
-<!-- 
-<div class="col-md-2 left">
-    {% block left_panel %}
-    <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
-    {% endblock %}
-</div>
- -->
-<div class="middle">
-    {% block main %}
-{% blocktrans %}
-
-<div class="container-fluid banner mission">
-	<div>
-    	
-    	<div class="container">
-        	<div class="row">
-    	
-        		<div class="col-md-12">
-        			<h1>StoryMaker enables aspiring journalists all over the world to safely produce and publish professional-grade news with their phone.</h1>
-        		</div>
-	
+    <div>
+    <!-- 
+    <div class="col-md-2 left">
+        {% block left_panel %}
+        <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
+        {% endblock %}
+    </div>
+     -->
+    <div class="middle">
+        {% block main %}
+        {% blocktrans %}
+    
+        <div class="container-fluid banner mission">
+        	<div>
+            	
+            	<div class="container">
+                	<div class="row">
+            	
+                		<div class="col-md-12">
+                			<h1>StoryMaker enables aspiring journalists all over the world to safely produce and publish professional-grade news with their phone.</h1>
+                		</div>
+        	
+                	</div>
+            	</div>
+        		
         	</div>
-    	</div>
-		
-	</div>
-</div>	
-{% endblocktrans %}
-
-<div class="container featured-makers">
-
-    <div class="row"><!-- Recent Posts -->
-    {% load blog_tags keyword_tags i18n %}
-    {% blog_recent_posts 6 as recent_posts %}
-    {% if recent_posts %}
-    {% for recent_post in recent_posts %}
-    	<div class="{% cycle "col-md-5" "col-md-7" "col-md-7" "col-md-5" %}">
-        		<div class="panel featured-item-panel">
-            		<a href="{{ recent_post.get_absolute_url }}" class="{% cycle "feature-blue" "feature-orange" "feature-red" "feature-green" %}">
-                		<div class="panel-heading">
-                		    <div class="panel-background" style="{% if settings.BLOG_USE_FEATURED_IMAGE and recent_post.featured_image %}background-image:url('{{MEDIA_URL}}{{recent_post.featured_image}}');{% endif %}"></div>
-        				    <h1>{{ recent_post.title }}</h1>
-        			    </div>
-        			    <div class="panel-footer">
-            			    <p>{{ recent_post.description|slice:":100" }}</p>
-            				<h3>{{ recent_post.publish_date|date:"F jS, Y" }}</h3>
+        </div>	
+        {% endblocktrans %}
+        
+        <div class="container featured-makers">
+        
+            <div class="row"><!-- Recent Posts -->
+            {% load blog_tags keyword_tags i18n %}
+            {% blog_recent_posts 6 as recent_posts %}
+            {% if recent_posts %}
+            {% for recent_post in recent_posts %}
+            	<div class="col-md-10 col-md-offset-1">
+                    <div class="row list-post">
+                        <div class="col-md-7">
+                            <h1>{{ recent_post.title }}</h1>
+                            <p>{{ recent_post.description|slice:":100" }}</p>
+                            <h3><span>{{ recent_post.user.get_full_name|default:recent_post.user.username }}</span> | <time>{{ recent_post.publish_date|date:"F jS, Y" }}</time></h3>
+                        </div>
+                        <div class="col-md-3">
+                            {% if settings.BLOG_USE_FEATURED_IMAGE and recent_post.featured_image %}
+                                <img src="{{MEDIA_URL}}{{recent_post.featured_image}}">
+                            {% endif %}
+                        </div> 
+                    </div>	
+            	</div>
+            {% endfor %}
+            {% endif %}
+            </div><!-- /Recent Posts -->
+        </div>
+        
+        {% blocktrans %}
+        <div class="container-fluid banner app-callout">
+        	<div>	
+            	<div class="container">
+                	<div class="row">
+        				<div class="col-md-6 col-md-offset-1">
+        					<h1>Learn. Make. Share.</h1>
+        				</div>
+        			</div>
+        			
+        			<div class="row">
+            			<div class="col-md-6 col-md-offset-1">
+            				<p>Produce and publish professional-grade news with your Android phone, as safely and securely as possible.</p>
             			</div>
-            		</a>
-        		</div>		
-    	</div>
-    {% endfor %}
-    {% endif %}
-    </div><!-- /Recent Posts -->
-</div>
-
-{% blocktrans %}
-	
-<div class="container-fluid banner app-callout">
-	<div>
-    	
-    	<div class="container">
+        			</div>
+        
+        			<div class="row">
+            			<div class="col-md-6 col-md-offset-1">
+            				<button class="btn btn-default">Learn More</button>
+            			</div>
+        			</div>
+            	</div>
+        		
+        	</div>
+        </div>
+        {% endblocktrans %}	
+        
+        <div class="container featured-story-makers">
+        	<div>
+        		<h2>Featured Story Makers </h2>
+        	</div>
+        
         	<div class="row">
-				<div class="col-md-12">
-					<h1>Learn. Make. Share.</h1>
-				</div>
-			</div>
-			
-			<div class="row">
-			<div class="col-md-6">
-				<p>Produce and publish professional-grade news with your Android phone, as safely and securely as possible.</p>
-			</div>
+        	    {% for user in featured_users %}
+        		<div class="col-sm-3 featured-story-maker">
+        			<div class="featured-story-maker-portrait">
+        				<img src="/static/img/stm-avatar-blank.gif"></img>
+        			</div>
+        
+        			<h1>{{ user.username }}</h1>
+        
+        			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida nunc in mauris gravida</p>
+        
+        			<button class="btn btn-default">See Stories</button>
+        		</div>
+                {% endfor %}
+        	</div>
+        </div>
+        
+        <div class="container-fluid small-app-callout">
+            <hr/>
+        	<div>	
+            	<div class="container">
+                	<div class="row">
+        				<div class="col-md-9">
+        					<h4>Start creating stories now with the StoryMaker Beta for Android.</h4>
+        				</div>
+        				<div class="col-md-2">
+        					<a class="google-play-badge">Google Play Store</a> 
+        				</div>
+        			</div>
+            	</div>
+        	</div>
+        </div>
+        
+        <div class="container-fluid home-supported-by">
+            <hr/>	
+        	<div class="container">
+            	<div class="row">
+            		<h2>StoryMaker is Supported By</h2>
+            	</div>
+            	<div class="row supporter-container">
+                	<div class="col-md-12">              	
+                        <a class="story-maker-supporter-link stm-small-world-news" href="http://smallworldnews.com/">Small World News</a>
+                	
+                        <a class="story-maker-supporter-link stm-scalio" href="http://scal.io/">Scal.io</a>
+                	
+                        <a class="story-maker-supporter-link stm-open-tech" href="https://www.opentechfund.org/">Open Tech Fund</a>
+                	
+                        <a class="story-maker-supporter-link stm-guardian" href="http://guardianproject.info/">The Guardian Project</a>
+                	
+                        <a class="story-maker-supporter-link stm-free-press" href="http://www.freepressunlimited.org/">Free Press Unlimited</a>
+                	</div>
+    			</div>
+        	</div>
+        </div>
+        
+        <div class="container-fluid home-about">
+            <hr/>	
+        	<div class="container">
+            	<div class="row home-about-container">
+                	<div class="col-md-6">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt ex sed mauris rhoncus mollis. Cras viverra orci id commodo fringilla. Nunc rutrum orci in tellus placerat interdum. Aliquam egestas, urna ut consectetur pretium, lacus massa porta libero, in tempus ex magna eu risus.</p>              	
+                 	</div>
+                    <div class="col-md-6">
+                        <p>Cras sed ex molestie, gravida risus eu, semper risus. Etiam ut nisl purus. Maecenas vitae mattis odio. Vivamus blandit tincidunt iaculis. Quisque velit mauris, tristique a nunc eu, iaculis ultricies magna.</p>
+                 	</div>
+    			</div>
+    			<div class="row home-social-container">
+                    <div class="col-md-12">
+                        <a class="social-link twitter" href="#">Twitter</a>
+                        <a class="social-link facebook" href="#">Facebook</a>
+                        <a class="social-link instagram" href="#">Instagram</a>
+                        <a class="social-link youtube" href="#">Youtube</a>
+                    </div>
+    			</div>
+        	</div>
+        </div>        
+    
+    {% endblock %}
+    </div>
 
-			<div class="col-md-6 google-play-badge">
-				<a href="http://play.google.com">Get it on Googleplay.</a>
-			</div>
-			</div>
-
-			<div class="row">
-				<button class="col-md-12 btn btn-default">Learn More</button>
-			</div>
-    	</div>
-		
-	</div>
-</div>
-{% endblocktrans %}	
-<div class="container featured-story-makers">
-	<div>
-		<h2>Featured Story Makers </h2>
-	</div>
-
-	<div class="row">
-	    {% for user in featured_users %}
-		<div class="col-sm-3 featured-story-maker">
-			<div class="featured-story-maker-portrait">
-				<img src="/static/img/stm-avatar-blank.gif"></img>
-			</div>
-
-			<h1>{{ user.username }}</h1>
-
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida nunc in mauris gravida</p>
-
-			<button class="btn btn-default">See Stories</button>
-		</div>
-        {% endfor %}
-	</div>
-</div>
-{% blocktrans %}	
-<div class="container">
-
-    <hr/>
-
-	<div class="row">
-		<div class="col-md-6 stm-footer-about">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt ex sed mauris rhoncus mollis. Cras viverra orci id commodo fringilla. Nunc rutrum orci in tellus placerat interdum. Aliquam egestas, urna ut consectetur pretium, lacus massa porta libero, in tempus ex magna eu risus. Cras sed ex molestie, gravida risus eu, semper risus. Etiam ut nisl purus. Maecenas vitae mattis odio. Vivamus blandit tincidunt iaculis. Quisque velit mauris, tristique a nunc eu, iaculis ultricies magna.</p>
-
-            <ul>
-                <li><a>Twitter</a></li>
-                <li><a>Instagram</a></li>
-                <li><a>Facebook</a></li>
-                <li><a>YouTube</a></li>
-            </ul>
-		</div>
-
-		<div class="col-md-5 col-md-offset-1 container stm-supported-by">
-			<h2>StoryMaker is supported by</h2>
-
-			<div class="row">
-				<div class="col-md-6">
-					<a class="story-maker-supporter-link stm-small-world-news" href="http://smallworldnews.com/">Small World News</a>
-				</div>
-				
-				<div class="col-md-6">
-					<a class="story-maker-supporter-link stm-scalio" href="http://scal.io/">Scal.io</a>
-				</div>
-				
-				<div class="col-md-6">
-					<a class="story-maker-supporter-link stm-guardian" href="http://guardianproject.info/">The Guardian Project</a>
-				</div>
-				
-				<div class="col-md-6">
-					<a class="story-maker-supporter-link stm-free-press" href="http://www.freepressunlimited.org/">Free Press Unlimited</a>
-				</div>
-				
-                <div class="col-md-6">
-					<a class="story-maker-supporter-link stm-open-tech" href="https://www.opentechfund.org/">Open Tech Fund</a>
-				</div>
-			</div>
-
-			<button class="btn btn-default">Learn More About StoryMaker.org</button>
-		</div>
-	</div>
-</div>
-
-
-{% endblocktrans %}
-{% endblock %}
-</div>
-
-</div>
+    </div>
 </div>
 
 <footer>

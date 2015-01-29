@@ -37,20 +37,23 @@
 
 .app-callout {
     
-    background: url(../img/stm-home-app-callout.jpg) no-repeat $green center center;
-    height: 380px;
+    background: url(../img/stm-home-app-callout-orange.jpg) no-repeat $green center center;
+    height: 515px;
     @include prefix( background-size, cover);
     
     h1 {
         
         text-align: left;
-        margin-top: 84px;
+        margin-top: 144px;
+        font-size: pem(42);
     }
     
     p {
         
         color: #FFF;
         font-weight: 300;
+        font-size: pem(20);
+        line-height: pem(28, 20);
     }
     
     a {
@@ -58,6 +61,7 @@
         color: #FFF;
     }
     
+/*
     .google-play-badge {
 
         a {
@@ -70,6 +74,7 @@
             @extend .text-replacement;  
         }
     }
+*/
     
     .btn-default {
         
@@ -78,7 +83,7 @@
         padding-left: 20px;
         padding-right: 20px;
         border-color: #FFF;
-        margin-left: 15px;
+        margin-top: 10px;
         
         &:hover,
         &:focus,
@@ -99,7 +104,7 @@
     padding-bottom: 40px;
 }
 
-@import 'featured-panels';
+@import 'posts';
 
 /* Makers List */
 
@@ -147,6 +152,138 @@
 
 /* About Footer */
 
+.small-app-callout {
+    
+    height: 190px;
+    
+    .row {
+        
+        margin-top: 50px;
+    }
+    
+    h4 {
+        
+        font-size: pem(28);
+    }
+    
+    a.google-play-badge {
+    
+        display: block;
+        background: url(../img/google-play-badge.png) no-repeat;
+        width: 172px;
+        height: 60px;
+                
+        @extend .text-replacement;  
+    }
+}
+
+
+/* Supported By */
+
+.home-supported-by {
+    
+    height: 210px;
+    
+    h2 {
+        
+        text-align: center;
+        margin-top: 26px;
+    }
+    
+    .supporter-container {
+        
+        position: relative;
+        overflow: auto;
+        margin-top: 14px;
+    }
+    
+    .story-maker-supporter-link {
+        
+        display: block;
+        float: left;
+        @extend .text-replacement;
+        text-indent: 200%; 
+        padding: 0;
+        margin: 0;
+        width: 20%;
+    
+        &.stm-small-world-news {
+            
+            height: 36px;
+            background: url(../img/stm-small-world-news.gif) no-repeat left center;
+            margin-top: 30px;
+        }
+    
+        &.stm-scalio {
+            
+            height: 27px;
+            background: url(../img/stm-scalio.png) no-repeat 48px -13px;
+            margin-top: 30px;
+        }
+        
+        &.stm-open-tech {
+            
+            height: 36px;
+            background: url(../img/stm-open-technology.gif) no-repeat 4px 0px;
+            margin-top: 30px;
+        }
+        
+        &.stm-guardian {
+            
+            height: 95px;
+            background: url(../img/stm-guardian-logo.gif) no-repeat 81px 0px;
+            margin-top: 22px;
+        }
+        
+        &.stm-free-press {
+            
+            height: 95px;
+            background: url(../img/stm-free-press-logo.gif) no-repeat 106px 0px;
+            margin-top: 2px;
+        }
+    } 
+}
+
+
+/* Home About */
+
+.home-about {
+    
+    .home-about-container {
+        
+        margin-top: 40px;
+    }
+    
+    p {
+        
+        font-size: pem(18);
+        line-height: pem(32, 18);
+    }
+    
+    .home-social-container {
+        
+        text-align: center;
+        margin-bottom: 10px;
+    
+        .social-link {
+        
+            width: 41px;
+            height: 41px;
+            display: inline-block;
+            margin: 0 11px;
+            @extend .text-replacement;
+            
+            &.twitter {     background: url(../img/stm-social-twitter.png) no-repeat; }
+            &.facebook {    background: url(../img/stm-social-facebook.png) no-repeat; }
+            &.instagram {   background: url(../img/stm-social-instagram.png) no-repeat; }
+            &.youtube {     background: url(../img/stm-social-youtube.png) no-repeat; }
+        }
+    }
+}
+
+
+
+/*
 .stm-footer-about {
     
     p {
@@ -219,6 +356,7 @@
         }
     }
 }
+*/
 
 
 
