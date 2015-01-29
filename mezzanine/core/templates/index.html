@@ -44,6 +44,8 @@
 <script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
 <script src="{% static "js/bootstrap.js" %}"></script>
 <script src="{% static "js/bootstrap-extras.js" %}"></script>
+<script src="{% static "js/global.js" %}"></script>
+
 {% block extra_js %}{% endblock %}
 {% endcompress %}
 
@@ -73,7 +75,7 @@
     
     {% page_menu "pages/menus/dropdown.html" %}
     <div class="navbar-right navbar-form">
-        {% search_form "all" %}
+        {% search_form %}
         {% include "includes/user_panel.html" %}
     </div>
 </div>

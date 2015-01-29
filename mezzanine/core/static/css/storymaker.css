@@ -65,27 +65,62 @@ h2 {
 
 /* Header */
 .navbar {
+  height: 82px;
   border-radius: 0;
-  background: #FFF;
+  background: #2a2a2a;
   margin-bottom: 0;
   box-shadow: none;
-  border-left: 0;
-  border-right: 0; }
+  border: none; }
   .navbar > .container .navbar-brand {
     font-weight: 600;
-    color: #222222;
-    background: url(../img/stm-logo.png) no-repeat 0 2px;
-    padding-left: 57px;
-    font-size: 0.875em;
-    margin-left: 10px; }
+    color: #FFF;
+    font-size: 1.125em;
+    text-transform: uppercase;
+    letter-spacing: 0.17em;
+    height: 52px;
+    margin-top: 15px;
+    padding-left: 70px;
+    margin-left: 10px;
+    background: url(../img/stm-logo.png) no-repeat 0 0; }
+    .navbar > .container .navbar-brand span {
+      color: #989898; }
+  .navbar .navbar-right {
+    margin-top: 24px; }
   .navbar .navbar-form form, .navbar .navbar-form .user-panel {
     display: inline; }
-  .navbar .user-panel a {
-    font-size: 0.75em;
-    font-weight: 400;
-    color: #222222; }
-  .navbar .user-panel p {
-    display: inline; }
+  .navbar .navbar-form .btn {
+    width: 32px;
+    background: url(../img/stm-search-icon.gif) no-repeat 0 5px;
+    border: none;
+    outline: none; }
+  .navbar .navbar-form .search-field {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #989898;
+    border-radius: 0;
+    color: #6b6b6b;
+    font-size: 1.125em;
+    padding-left: 0;
+    padding-right: 0; }
+    .navbar .navbar-form .search-field:focus {
+      color: #FFF;
+      border-bottom-color: #FFF;
+      -webkit-box-shadow: none;
+      -khtml-box-shadow: none;
+      -moz-box-shadow: none;
+      -o-box-shadow: none;
+      -ms-box-shadow: none;
+      box-shadow: none; }
+  .navbar .user-panel {
+    color: #989898; }
+    .navbar .user-panel a {
+      font-size: 1em;
+      font-weight: 400;
+      color: #FFF; }
+    .navbar .user-panel p {
+      display: inline; }
+    .navbar .user-panel .nav-username {
+      padding-right: 10px; }
 
 /* Sidebar */
 .stm-sidebar {
@@ -112,16 +147,16 @@ footer .nav-footer {
     footer .nav-footer ul li {
       padding-right: 30px; }
   footer .nav-footer a {
-    color: #222222; }
+    color: #2a2a2a; }
 footer .site-info {
   margin: 0;
   font-size: 0.75em;
   font-weight: 400; }
   footer .site-info a {
     font-weight: 600;
-    color: #222222; }
+    color: #2a2a2a; }
   footer .site-info .separator {
-    color: #222222; }
+    color: #2a2a2a; }
 
 /* Account Login/Signin */
 /* Home */
@@ -266,11 +301,11 @@ footer .site-info {
     .featured-item-panel .panel-footer p {
       font-size: 0.875em;
       line-height: 1.71429em;
-      color: #222222; }
+      color: #2a2a2a; }
     .featured-item-panel .panel-footer h3 {
       font-size: 0.75em;
       font-weight: 600;
-      color: #222222;
+      color: #2a2a2a;
       margin: 10px 0 0; }
   .featured-item-panel .feature-orange .panel-background:after {
     background-color: #f37528; }

@@ -3,7 +3,9 @@
 @import 'fonts';
 
 // Colors
-$black: #222;
+$black: #2a2a2a;
+$dark: #989898;
+
 $green: #b3c742;
 $blue: #35678e;
 $grey: #DDD;
@@ -114,22 +116,37 @@ h2 {
 
 .navbar {
     
+    height: 82px;
     border-radius: 0;
-    background: #FFF;
+    background: $black;
     margin-bottom: 0;
     box-shadow: none;
-    border-left: 0;
-    border-right: 0;
+    border: none;
     
     > .container .navbar-brand {
         
         font-weight: 600;
-        color: $black;
-        background: url(../img/stm-logo.png) no-repeat 0 2px;
-        padding-left: 57px;
-        font-size: pem(14);
+        color: #FFF;
+        font-size: pem(18);
+        text-transform: uppercase;
+        letter-spacing: 0.17em;
+
+        height: 52px;
+        margin-top: 15px;
+        padding-left: 70px;
         margin-left: 10px;
         
+        background: url(../img/stm-logo.png) no-repeat 0 0;
+        
+        span {
+            
+            color: $dark;
+        }
+    }
+    
+    .navbar-right {
+        
+        margin-top: 24px;    
     }
     
     .navbar-form {
@@ -138,20 +155,54 @@ h2 {
             
             display: inline;
         }
+
+        .btn {
+            
+            width: 32px;
+            background: url(../img/stm-search-icon.gif) no-repeat 0 5px;  
+            border: none;
+            outline: none;
+        }
+        
+        .search-field {
+            
+            background: none;
+            border: none;
+            border-bottom: 1px solid $dark;
+            border-radius: 0;
+            color: #6b6b6b;
+            font-size: pem(18);
+            padding-left: 0;
+            padding-right: 0;
+            
+            &:focus {
+                
+                color: #FFF;
+                border-bottom-color: #FFF;
+                @include prefix( box-shadow, none);
+            }
+        }
     }
     
     .user-panel {
         
+        color: $dark;
+        
         a {
             
-            font-size: pem(12);
+            font-size: pem(16);
             font-weight: 400;
-            color: $black;
+            color: #FFF;
         }
         
         p {
             
             display: inline;
+        }
+        
+        .nav-username {
+            
+            padding-right: 10px;
         }
     }   
 }
