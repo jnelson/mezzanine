@@ -147,7 +147,7 @@
             	<div class="col-md-10 col-md-offset-1">
                     <div class="row list-post">
                         <div class="col-md-7">
-                            <h1>{{ recent_post.title }}</h1>
+                            <h1><a href="{{ recent_post.get_absolute_url }}">{{ recent_post.title }}</a></h1>
                             <p>{{ recent_post.description|slice:":100" }}</p>
                             <h3><span>{{ recent_post.user.get_full_name|default:recent_post.user.username }}</span> | <time>{{ recent_post.publish_date|date:"F jS, Y" }}</time></h3>
                         </div>
