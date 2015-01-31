@@ -393,6 +393,14 @@ REST_FRAMEWORK = {
     ),
 }
 
+####################
+# SWAGGER SETTINGS #
+####################
+
+SWAGGER_SETTINGS = {
+    'is_authenticated': True,
+    'is_superuser': True
+}
 
 SITE_TITLE="StoryMaker.org"
 SITE_TAGLINE=""
