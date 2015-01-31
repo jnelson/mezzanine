@@ -21,6 +21,7 @@ urlpatterns = i18n_patterns("",
 
 urlpatterns += patterns('',
     
+    url(r'^docs/', include('rest_framework_swagger.urls')),
     ('^activity/', include('actstream.urls')),
 
     # We don't want to presume how your homepage works, so here are a
