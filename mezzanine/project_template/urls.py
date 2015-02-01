@@ -20,7 +20,7 @@ urlpatterns = i18n_patterns("",
 )
 
 urlpatterns += patterns('',
-    
+
     url(r'^docs/', include('rest_framework_swagger.urls')),
     ('^activity/', include('actstream.urls')),
 
@@ -28,7 +28,7 @@ urlpatterns += patterns('',
     # few patterns you can use to set it up.
 
     url("^$", "storymaker.views.home", name="home"),
-
+    url(r'^burundi/$', "storymaker.views.burundi_blog_view", name="burundi"),
     # HOMEPAGE AS STATIC TEMPLATE
     # ---------------------------
     # This pattern simply loads the index.html template. It isn't
