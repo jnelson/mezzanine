@@ -164,6 +164,7 @@ STATICFILES_FINDERS = (
 # a mode you'd pass directly to os.chmod.
 FILE_UPLOAD_PERMISSIONS = 0o644
 
+ACCOUNTS_APPROVAL_REQUIRED = True
 
 AUTH_PROFILE_MODULE = "project_template.UserProfile"
 
