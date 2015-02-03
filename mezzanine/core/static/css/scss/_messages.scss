@@ -1,0 +1,31 @@
+
+
+.message-container {
+    
+    background: #4a4a4a;
+    
+    .alert {
+        
+        background: none;
+        border: none;
+        @include prefix( box-shadow, none);
+        @include prefix( text-shadow, none);
+        
+        color: #FFF;
+        font-weight: 600;
+        
+        .close {
+            
+            @include prefix( text-shadow, none);
+            color: #FFF;
+            font-weight: 300;
+            opacity: 0.6;
+            font-size: pem(32);
+            
+            &:hover {
+                
+                opacity: 1;
+            }
+        }
+    }
+}

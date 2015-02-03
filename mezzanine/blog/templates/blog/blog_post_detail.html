@@ -1,7 +1,9 @@
 {% extends "blog/blog_post_list.html" %}
 {% load mezzanine_tags comment_tags keyword_tags rating_tags i18n future disqus_tags activity_tags %}
 
-{% block meta_title %}{{ blog_post.meta_title }}{% endblock %}
+    {% block meta_title %}
+        {{ blog_post.meta_title }}
+    {% endblock %}
 
 {% block meta_keywords %}{% metablock %}
 {% keywords_for blog_post as tags %}
@@ -21,26 +23,92 @@
 <li class="active">{{ blog_post.title }}</li>
 {% endblock %}
 
+
+
+
+<!-- This is the start of the post content -->
+
 {% block main %}
 
-{% block blog_post_detail_postedby %}
-{% editable blog_post.publish_date %}
-<h6 class="post-meta">
-    {% trans "Posted by" %}:
-    {% with blog_post.user as author %}
-    <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a> 
-    <a href="{% follow_url author %}"> 
-    {% if request.user|is_following:author %}
-        (stop following)
-    {% else %}
-        (follow)
-    {% endif %}
-    </a>
-    {% endwith %}
-    {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} ago{% endblocktrans %}
-</h6>
-{% endeditable %}
-{% endblock %}
+
+<div class="row">
+    <div class="col-md-12 blog-post">
+    
+    <!-- These columns reset the grid in this container -->
+    
+        <div class="row">
+            <div class="col-md-6 col-md-offset-2">
+                <h1>
+                    {% editable blog_post.title %}
+                        {{ blog_post.title }}
+                    {% endeditable %}
+                </h1>
+                <h3><time>{{ blog_post.publish_date|date:"F jS, Y" }}</time></h3>
+            </div>
+            <div class="col-md-2">
+                <div class="tags">
+                    {% block blog_post_detail_keywords %}
+                    {% keywords_for blog_post as tags %}
+                    {% if tags %}
+                    {% spaceless %}
+                    <ul class="list-inline tags">
+                        <li>{% trans "Tags" %}:</li>
+                        {% for tag in tags %}
+                        <li><a href="{% url "blog_post_list_tag" tag.slug %}">{{ tag }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endspaceless %}
+                    {% endif %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 col-md-offset-2">
+                <div class="blog-post-body">           
+                    {% block blog_post_detail_content %}
+                    {% editable blog_post.content %}
+                    {{ blog_post.content|richtext_filters|safe }}
+                    {% endeditable %}
+                    {% endblock %}
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="byline">
+                    {% block blog_post_detail_postedby %}
+                        {% with blog_post.user as author %}
+                            <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a>
+                            <a href="{% follow_url author %}"> 
+                                {% if request.user|is_following:author %}
+                                    Unfollow {{ author.get_first_name|default:author.username }}
+                                {% else %}
+                                    Follow {{ author.get_first_name|default:author.username }}
+                                {% endif %}
+                            </a>
+                        {% endwith %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+        <div class="row comments">
+            <div class="col-md-8 col-md-offset-2">
+                <h2>{% trans "Comments" %}</h2>
+                
+                {% block blog_post_detail_comments %}
+                    {% if blog_post.allow_comments %}
+                        {% comments_for blog_post %}
+                    {% endif %}
+                {% endblock %}
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
 {% block blog_post_detail_commentlink %}
 <p>
     {% if blog_post.allow_comments %}
@@ -67,25 +135,7 @@
 {% include "generic/includes/disqus_counts.html" %}
 {% endif %}
 
-{% block blog_post_detail_content %}
-{% editable blog_post.content %}
-{{ blog_post.content|richtext_filters|safe }}
-{% endeditable %}
-{% endblock %}
 
-{% block blog_post_detail_keywords %}
-{% keywords_for blog_post as tags %}
-{% if tags %}
-{% spaceless %}
-<ul class="list-inline tags">
-    <li>{% trans "Tags" %}:</li>
-    {% for tag in tags %}
-    <li><a href="{% url "blog_post_list_tag" tag.slug %}">{{ tag }}</a></li>
-    {% endfor %}
-</ul>
-{% endspaceless %}
-{% endif %}
-{% endblock %}
 
 {% block blog_post_detail_rating %}
 <div class="panel panel-default rating">
@@ -131,10 +181,6 @@
 </ul>
 </div>
 {% endif %}
-{% endblock %}
-
-{% block blog_post_detail_comments %}
-{% if blog_post.allow_comments %}{% comments_for blog_post %}{% endif %}
 {% endblock %}
 
 {% endblock %}

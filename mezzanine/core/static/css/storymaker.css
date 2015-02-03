@@ -164,6 +164,40 @@ footer {
     footer .site-info .separator {
       color: #2a2a2a; }
 
+/* Messages */
+.message-container {
+  background: #4a4a4a; }
+  .message-container .alert {
+    background: none;
+    border: none;
+    -webkit-box-shadow: none;
+    -khtml-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+    box-shadow: none;
+    -webkit-text-shadow: none;
+    -khtml-text-shadow: none;
+    -moz-text-shadow: none;
+    -o-text-shadow: none;
+    -ms-text-shadow: none;
+    text-shadow: none;
+    color: #FFF;
+    font-weight: 600; }
+    .message-container .alert .close {
+      -webkit-text-shadow: none;
+      -khtml-text-shadow: none;
+      -moz-text-shadow: none;
+      -o-text-shadow: none;
+      -ms-text-shadow: none;
+      text-shadow: none;
+      color: #FFF;
+      font-weight: 300;
+      opacity: 0.6;
+      font-size: 2em; }
+      .message-container .alert .close:hover {
+        opacity: 1; }
+
 /* Account Login/Signin */
 /* Home */
 .banner {
