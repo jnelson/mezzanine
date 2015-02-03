@@ -30,6 +30,15 @@
 
 {% block main %}
 
+{% block blog_post_detail_featured_image %}
+    {% if settings.BLOG_USE_FEATURED_IMAGE and blog_post.featured_image %}
+    <div class="row">
+        <div class="col-md-12 blog-post-masthead">
+            <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 600 0 %}">
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}
 
 <div class="row">
     <div class="col-md-12 blog-post">
@@ -43,7 +52,31 @@
                         {{ blog_post.title }}
                     {% endeditable %}
                 </h1>
-                <h3><time>{{ blog_post.publish_date|date:"F jS, Y" }}</time></h3>
+                <h3>
+                    <time>{{ blog_post.publish_date|date:"F jS, Y" }}</time>                
+                    {% block blog_post_detail_commentlink %}
+                    <span class="comments-count">
+                        {% if blog_post.allow_comments %}
+                            {% if settings.COMMENTS_DISQUS_SHORTNAME %}
+                                <a href="{{ blog_post.get_absolute_url }}#disqus_thread"
+                                    data-disqus-identifier="{% disqus_id_for blog_post %}">{% spaceless %}
+                                    {% trans "Comments" %}
+                                {% endspaceless %}</a>
+                            {% else %}<a href="#comments">{% spaceless %}
+                                {% blocktrans count comments_count=blog_post.comments_count %}{{ comments_count }} comment{% plural %}{{ comments_count }} comments{% endblocktrans %}
+                                {% endspaceless %}</a>
+                            {% endif %}
+                        {% endif %}
+                    </span>
+                    {% endblock %}
+                    
+                    <span class="rating">
+                    {% block blog_post_detail_rating %}
+                        {% rating_for blog_post %}
+                    {% endblock %}
+                    </span>
+                    
+                </h3>
             </div>
             <div class="col-md-2">
                 <div class="tags">
@@ -91,6 +124,18 @@
                 </div>
             </div>
         </div>
+        
+        {% block blog_post_detail_sharebuttons %}
+            {% set_short_url_for blog_post %}
+        <div class="row">
+            <div class="col-md-6 col-md-offset-2">
+                <div class="blog-post-share-links">                
+                    <a class="btn btn-sm share-twitter" target="_blank" href="http://twitter.com/home?status={{ blog_post.short_url|urlencode }}%20{{ blog_post.title|urlencode }}">{% trans "Share on Twitter" %}</a>
+                    <a class="btn btn-sm share-facebook" target="_blank" href="http://facebook.com/sharer.php?u={{ request.build_absolute_uri }}&amp;t={{ blog_post.title|urlencode }}">{% trans "Share on Facebook" %}</a>                
+                </div>
+            </div>
+        </div>
+        {% endblock %}
 
         <div class="row comments">
             <div class="col-md-8 col-md-offset-2">
@@ -104,83 +149,68 @@
 
             </div>
         </div>
+        
+        {% block blog_post_previous_next %}
+        <div class="row blog-paging">
+            <div class="col-md-8 col-md-offset-2">
+                <ul class="pager">
+                    {% with blog_post.get_previous_by_publish_date as previous %}
+                        {% if previous %}
+                        <li class="previous">
+                            <a href="{{ previous.get_absolute_url }}">&larr; {{ previous }}</a>
+                        </li>
+                        {% endif %}
+                    {% endwith %}
+                    {% with blog_post.get_next_by_publish_date as next %}
+                        {% if next %}
+                        <li class="next">
+                            <a href="{{ next.get_absolute_url }}">{{ next }} &rarr;</a>
+                        </li>
+                        {% endif %}
+                    {% endwith %}
+                </ul>
+            </div>            
+        </div>
+        {% endblock %}
+        
+        {% block blog_post_detail_related_posts %}
+            {% if blog_post.related_posts.all %}
+            <div class="row related">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2>{% trans 'Related posts' %}</h2>
+                    {% for post in blog_post.related_posts.all %}
+                    
+                        <div class="row list-post">
+                            <div class="col-md-7">
+                                <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
+                                <p>{{ post.description|slice:":100" }}</p>
+                                <h3><span>{{ post.user.get_full_name|default:post.user.username }}</span> | <time>{{ post.publish_date|date:"F jS, Y" }}</time></h3>
+                            </div>
+                            <div class="col-md-3">
+                                {% if settings.BLOG_USE_FEATURED_IMAGE and post.featured_image %}
+                                    <img src="{{MEDIA_URL}}{{post.featured_image}}">
+                                {% endif %}
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+        {% endblock %}
+
+
 
     </div>
 </div>
 
+<!-- This is the end of the post content -->
 
-{% block blog_post_detail_commentlink %}
-<p>
-    {% if blog_post.allow_comments %}
-        {% if settings.COMMENTS_DISQUS_SHORTNAME %}
-            (<a href="{{ blog_post.get_absolute_url }}#disqus_thread"
-                data-disqus-identifier="{% disqus_id_for blog_post %}">{% spaceless %}
-                {% trans "Comments" %}
-            {% endspaceless %}</a>)
-        {% else %}(<a href="#comments">{% spaceless %}
-            {% blocktrans count comments_count=blog_post.comments_count %}{{ comments_count }} comment{% plural %}{{ comments_count }} comments{% endblocktrans %}
-            {% endspaceless %}</a>)
-        {% endif %}
-    {% endif %}
-</p>
-{% endblock %}
-
-{% block blog_post_detail_featured_image %}
-{% if settings.BLOG_USE_FEATURED_IMAGE and blog_post.featured_image %}
-<p><img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 600 0 %}"></p>
-{% endif %}
-{% endblock %}
-
+<!-- Disqus Counts / Not using Disqus -->
+<!--
 {% if settings.COMMENTS_DISQUS_SHORTNAME %}
 {% include "generic/includes/disqus_counts.html" %}
 {% endif %}
-
-
-
-{% block blog_post_detail_rating %}
-<div class="panel panel-default rating">
-    <div class="panel-body">
-    {% rating_for blog_post %}
-    </div>
-</div>
-{% endblock %}
-
-{% block blog_post_detail_sharebuttons %}
-{% set_short_url_for blog_post %}
-<a class="btn btn-sm share-twitter" target="_blank" href="http://twitter.com/home?status={{ blog_post.short_url|urlencode }}%20{{ blog_post.title|urlencode }}">{% trans "Share on Twitter" %}</a>
-<a class="btn btn-sm share-facebook" target="_blank" href="http://facebook.com/sharer.php?u={{ request.build_absolute_uri }}&amp;t={{ blog_post.title|urlencode }}">{% trans "Share on Facebook" %}</a>
-{% endblock %}
-
-{% block blog_post_previous_next %}
-<ul class="pager">
-{% with blog_post.get_previous_by_publish_date as previous %}
-{% if previous %}
-<li class="previous">
-    <a href="{{ previous.get_absolute_url }}">&larr; {{ previous }}</a>
-</li>
-{% endif %}
-{% endwith %}
-{% with blog_post.get_next_by_publish_date as next %}
-{% if next %}
-<li class="next">
-    <a href="{{ next.get_absolute_url }}">{{ next }} &rarr;</a>
-</li>
-{% endif %}
-{% endwith %}
-</ul>
-{% endblock %}
-
-{% block blog_post_detail_related_posts %}
-{% if blog_post.related_posts.all %}
-<div id="related-posts">
-<h3>{% trans 'Related posts' %}</h3>
-<ul class="list-unstyled">
-{% for post in blog_post.related_posts.all %}
-     <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>
-</div>
-{% endif %}
-{% endblock %}
+-->
 
 {% endblock %}
