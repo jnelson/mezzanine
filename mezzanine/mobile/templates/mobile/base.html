@@ -42,6 +42,7 @@
         {% block main %}{% endblock %}
     </div>
 
+    {% comment %}
     <div data-role="footer">
         <div data-role="content" align="center">
         	{% include "mobile/includes/search.html" %}
@@ -49,6 +50,7 @@
             <p><a href="{% url "set_device" "default" %}?next={{ request.path }}" rel="external">{% trans "View Full Site" %}</a></p>
         </div>
     </div>
+    {% endcomment %}
 
 </div>
 

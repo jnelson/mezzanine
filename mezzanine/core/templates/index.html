@@ -73,7 +73,7 @@
 </div>
 <div class="navbar-collapse collapse">
     
-    {% page_menu "pages/menus/dropdown.html" %}
+    {# {% page_menu "pages/menus/dropdown.html" %} #}
     <div class="navbar-right navbar-form">
         {% search_form %}
         {% include "includes/user_panel.html" %}
@@ -287,6 +287,7 @@
             </div>
         </div>
     
+        {% comment %}
         <div class="row">        
             <div class="col-md-12">        
                 <p class="site-info">
@@ -304,6 +305,7 @@
                 </p>
             </div>
         </div>
+        {% endcomment %}
     
     </div>
 </footer>

@@ -25,10 +25,9 @@ class BlogPost(Displayable, Ownable, RichText, AdminThumbMixin):
     comments = CommentsField(verbose_name=_("Comments"))
     rating = RatingField(verbose_name=_("Rating"))
 
-    #TODO Temp fix for "__init__() got an unexpected keyword argument 'max_length'" error
-    #featured_image = FileField(verbose_name=_("Featured Image"),
-    #    upload_to=upload_to("blog.BlogPost.featured_image", "blog"),
-    #    format="Image", max_length=255, null=True, blank=True)
+    featured_image = FileField(verbose_name=_("Featured Image"),
+        upload_to=upload_to("blog.BlogPost.featured_image", "blog"),
+        format="Image", max_length=255, null=True, blank=True)
     related_posts = models.ManyToManyField("self",
                                  verbose_name=_("Related posts"), blank=True)
 

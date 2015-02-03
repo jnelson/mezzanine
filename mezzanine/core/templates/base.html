@@ -64,7 +64,7 @@
 </div>
 <div class="navbar-collapse collapse">
     
-    {% page_menu "pages/menus/dropdown.html" %}
+    {# {% page_menu "pages/menus/dropdown.html" %} #}
     <div class="navbar-right navbar-form">
         {% search_form %}
         {% include "includes/user_panel.html" %}
@@ -201,7 +201,8 @@
             {% block main %}{% endblock %}
         </div>
 
-<!-- <div class="col-md-3 right">
+{% comment %}
+<div class="col-md-3 right">
     {% nevercache %}
     {% include "includes/user_panel.html" %}
     {% endnevercache %}
@@ -214,7 +215,8 @@
     {% endblock %}
     </div>
     </div>
-</div> -->
+</div>
+{% endcomment %}
 
     </div>
 </div>
@@ -228,6 +230,7 @@
         </div>
     </div>
 
+    {% comment %}
     <div class="row">        
         <div class="col-md-12">        
             <p class="site-info">
@@ -245,6 +248,7 @@
             </p>
         </div>
     </div>
+    {% endcomment %}
 
 </div>
 </footer>

@@ -1,4 +1,4 @@
-{% load i18n mezzanine_tags comment_tags rating_tags %}
+{% load i18n mezzanine_tags comment_tags %}
 
 {% for comment in comments_for_thread %}
 
@@ -32,11 +32,7 @@
     <a href="#reply-{{ comment.id }}" class="reply">
         <span class="glyphicon glyphicon-share-alt"></span> {% trans "Reply" %}
     </a>
-    {% if settings.COMMENTS_USE_RATINGS %}
-    <div class="rating">
-    {% rating_for comment %}
-    </div>
-    {% endif %}
+
     <form class="comment-reply-form" method="post" id="reply-{{ comment.id }}"
         action="{{ comment_url }}#reply-{{ comment.id }}"
         {% if replied_to != comment.id %}style="display:none;"{% endif %}>

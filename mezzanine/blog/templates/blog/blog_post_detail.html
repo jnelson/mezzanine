@@ -1,5 +1,5 @@
 {% extends "blog/blog_post_list.html" %}
-{% load mezzanine_tags comment_tags keyword_tags rating_tags i18n future disqus_tags activity_tags %}
+{% load mezzanine_tags comment_tags keyword_tags i18n future disqus_tags activity_tags %}
 
     {% block meta_title %}
         {{ blog_post.meta_title }}
@@ -198,19 +198,15 @@
             </div>
             {% endif %}
         {% endblock %}
-
-
-
     </div>
 </div>
 
-<!-- This is the end of the post content -->
 
-<!-- Disqus Counts / Not using Disqus -->
-<!--
+{% comment "Disqus Counts / Not using Disqus" %}
 {% if settings.COMMENTS_DISQUS_SHORTNAME %}
 {% include "generic/includes/disqus_counts.html" %}
 {% endif %}
--->
+{% endcomment %}
+
 
 {% endblock %}

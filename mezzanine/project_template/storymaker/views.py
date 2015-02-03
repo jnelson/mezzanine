@@ -2,6 +2,9 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.contrib.auth.models import User
 from django.http import HttpResponse
+
+from mezzanine.blog.views import blog_post_list
+
 import logging
 
 logger = logging.getLogger(__name__)
@@ -38,3 +41,11 @@ def user_profile(request, user):
         message = "{0}'s profile.".format(user.username)
 
     return HttpResponse(message)
+
+
+def burundi_blog_view(request):
+    """
+        Since this is pinned to the 'burundi' category, it's using the template
+        blog_post_list_burundi.html
+    """
+    return blog_post_list(request, category='burundi')
