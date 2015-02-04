@@ -33,12 +33,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 a {
   color: #35678e; }
 
-.btn-default {
+.btn-default, .pager li > a {
   background: none;
   text-shadow: none;
   border: 2px solid #dddddd;
   box-shadow: none; }
-  .btn-default:hover, .btn-default:focus, .btn-default.focus {
+  .btn-default:hover, .pager li > a:hover, .btn-default:focus, .pager li > a:focus, .btn-default.focus, .pager li > a.focus {
     background: none;
     border-color: #35678e;
     color: #35678e; }
@@ -259,14 +259,14 @@ footer {
     line-height: 1.4em; }
   .app-callout a {
     color: #FFF; }
-  .app-callout .btn-default {
+  .app-callout .btn-default, .app-callout .pager li > a, .pager .app-callout li > a {
     color: #FFF;
     width: auto;
     padding-left: 20px;
     padding-right: 20px;
     border-color: #FFF;
     margin-top: 10px; }
-    .app-callout .btn-default:hover, .app-callout .btn-default:focus, .app-callout .btn-default.focus {
+    .app-callout .btn-default:hover, .app-callout .pager li > a:hover, .pager .app-callout li > a:hover, .app-callout .btn-default:focus, .app-callout .pager li > a:focus, .pager .app-callout li > a:focus, .app-callout .btn-default.focus, .app-callout .pager li > a.focus, .pager .app-callout li > a.focus {
       background: #FFF;
       color: #35678e; }
 
@@ -291,6 +291,139 @@ footer {
     text-transform: capitalize; }
 .list-post img {
   width: 100%; }
+
+.blog-post h1 {
+  font-size: 2.625em;
+  margin-bottom: 10px; }
+.blog-post h3 {
+  font-size: 0.75em;
+  margin-top: 0; }
+  .blog-post h3 time {
+    font-weight: 600;
+    padding-right: 10px; }
+  .blog-post h3 span.comments-count {
+    font-weight: 600; }
+.blog-post .tags-container {
+  margin-top: 30px; }
+.blog-post .blog-post-body {
+  margin-top: 20px; }
+  .blog-post .blog-post-body p {
+    font-size: 1.125em;
+    line-height: 1.77778em;
+    text-align: left;
+    margin-bottom: 20px; }
+.blog-post .byline {
+  border: 2px solid #e7e7e7;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px; }
+  .blog-post .byline .byline-body {
+    padding: 0 10px 10px 36px; }
+  .blog-post .byline h4 {
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: capitalize; }
+  .blog-post .byline .follow-button {
+    border-color: #4e95d2;
+    color: #4e95d2;
+    text-transform: capitalize; }
+    .blog-post .byline .follow-button:hover, .blog-post .byline .follow-button:focus {
+      background: #4e95d2;
+      color: #FFF; }
+.blog-post .blog-paging .pager {
+  margin: 40px 0; }
+.blog-post .post-comments {
+  border-top: 2px solid #e7e7e7; }
+  .blog-post .post-comments .comment {
+    margin-top: 20px; }
+    .blog-post .post-comments .comment img {
+      border: 5px solid #2a2a2a;
+      -webkit-border-radius: 22px;
+      -khtml-border-radius: 22px;
+      -moz-border-radius: 22px;
+      -o-border-radius: 22px;
+      -ms-border-radius: 22px;
+      border-radius: 22px; }
+    .blog-post .post-comments .comment h4 {
+      font-size: 1em;
+      font-weight: 600; }
+      .blog-post .post-comments .comment h4 .timespan {
+        font-weight: 400; }
+    .blog-post .post-comments .comment p {
+      font-size: 0.875em;
+      line-height: 1.57143em;
+      font-weight: 400;
+      margin-bottom: 5px; }
+    .blog-post .post-comments .comment .comment-actions {
+      font-size: 0.75em; }
+  .blog-post .post-comments form {
+    margin-top: 20px; }
+    .blog-post .post-comments form .input_id_name,
+    .blog-post .post-comments form .input_id_email,
+    .blog-post .post-comments form .input_id_url {
+      float: left;
+      width: 33%;
+      margin-bottom: 0; }
+      .blog-post .post-comments form .input_id_name input,
+      .blog-post .post-comments form .input_id_email input,
+      .blog-post .post-comments form .input_id_url input {
+        width: 94%; }
+      .blog-post .post-comments form .input_id_name .help-block,
+      .blog-post .post-comments form .input_id_email .help-block,
+      .blog-post .post-comments form .input_id_url .help-block {
+        font-size: 0.75em;
+        text-transform: capitalize;
+        margin-top: 0;
+        font-weight: 400;
+        color: #CCC; }
+    .blog-post .post-comments form .input_id_comment {
+      clear: both; }
+      .blog-post .post-comments form .input_id_comment textarea {
+        width: 100%;
+        max-width: 100%; }
+    .blog-post .post-comments form label {
+      font-size: 0.875em; }
+    .blog-post .post-comments form .form-actions {
+      background: none;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      text-align: right; }
+      .blog-post .post-comments form .form-actions .btn {
+        border-color: #f37528;
+        color: #f37528; }
+        .blog-post .post-comments form .form-actions .btn:hover, .blog-post .post-comments form .form-actions .btn:focus {
+          background: #f37528;
+          color: #FFF; }
+.blog-post .blog-related {
+  border-top: 2px solid #e7e7e7;
+  margin-top: 20px; }
+
+ul.tags {
+  list-style: none;
+  padding: 0; }
+  ul.tags li {
+    display: inline-block;
+    margin: 0 8px 10px 0; }
+    ul.tags li a {
+      font-size: 0.75em;
+      font-weight: 400;
+      color: #2a2a2a;
+      border: 0.16667em solid #e7e7e7;
+      padding: 0.33333em 1.16667em 0.5em;
+      -webkit-border-radius: 1.25em;
+      -khtml-border-radius: 1.25em;
+      -moz-border-radius: 1.25em;
+      -o-border-radius: 1.25em;
+      -ms-border-radius: 1.25em;
+      border-radius: 1.25em; }
+      ul.tags li a:hover, ul.tags li a:focus {
+        text-decoration: none;
+        border-color: #35678e;
+        color: #35678e; }
 
 /* Makers List */
 .featured-story-makers h2 {
@@ -495,10 +628,10 @@ footer {
     background: none;
     border: none;
     padding: 0; }
-  #account .account-login .btn-default {
+  #account .account-login .btn-default, #account .account-login .pager li > a, .pager #account .account-login li > a {
     border-color: #FFF;
     color: #FFF; }
-    #account .account-login .btn-default:hover, #account .account-login .btn-default:focus, #account .account-login .btn-default.focus {
+    #account .account-login .btn-default:hover, #account .account-login .pager li > a:hover, .pager #account .account-login li > a:hover, #account .account-login .btn-default:focus, #account .account-login .pager li > a:focus, .pager #account .account-login li > a:focus, #account .account-login .btn-default.focus, #account .account-login .pager li > a.focus, .pager #account .account-login li > a.focus {
       background: #FFF;
       border-color: #FFF;
       color: #f17534; }
@@ -546,7 +679,7 @@ footer {
   font-size: 1.125em; }
 .stm-sidebar .stm-blog-profile .settings-cta {
   margin-top: 10px; }
-  .stm-sidebar .stm-blog-profile .settings-cta .btn-default {
+  .stm-sidebar .stm-blog-profile .settings-cta .btn-default, .stm-sidebar .stm-blog-profile .settings-cta .pager li > a, .pager .stm-sidebar .stm-blog-profile .settings-cta li > a {
     width: 100%; }
 .stm-sidebar .stm-blog-groups h3 {
   font-size: 0.875em;

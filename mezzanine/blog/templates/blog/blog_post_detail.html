@@ -46,7 +46,7 @@
     <!-- These columns reset the grid in this container -->
     
         <div class="row">
-            <div class="col-md-6 col-md-offset-2">
+            <div class="col-md-8 col-md-offset-2">
                 <h1>
                     {% editable blog_post.title %}
                         {{ blog_post.title }}
@@ -69,31 +69,7 @@
                         {% endif %}
                     </span>
                     {% endblock %}
-                    
-                    <span class="rating">
-                    {% block blog_post_detail_rating %}
-                        {% rating_for blog_post %}
-                    {% endblock %}
-                    </span>
-                    
                 </h3>
-            </div>
-            <div class="col-md-2">
-                <div class="tags">
-                    {% block blog_post_detail_keywords %}
-                    {% keywords_for blog_post as tags %}
-                    {% if tags %}
-                    {% spaceless %}
-                    <ul class="list-inline tags">
-                        <li>{% trans "Tags" %}:</li>
-                        {% for tag in tags %}
-                        <li><a href="{% url "blog_post_list_tag" tag.slug %}">{{ tag }}</a></li>
-                        {% endfor %}
-                    </ul>
-                    {% endspaceless %}
-                    {% endif %}
-                    {% endblock %}
-                </div>
             </div>
         </div>
         
@@ -108,17 +84,33 @@
                 </div>
             </div>
             <div class="col-md-2">
+                <div class="tags-container">
+                    {% block blog_post_detail_keywords %}
+                    {% keywords_for blog_post as tags %}
+                    {% if tags %}
+                    {% spaceless %}
+                    <ul class="tags">
+                        {% for tag in tags %}
+                        <li><a href="{% url "blog_post_list_tag" tag.slug %}">{{ tag }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% endspaceless %}
+                    {% endif %}
+                    {% endblock %}
+                </div>
                 <div class="byline">
                     {% block blog_post_detail_postedby %}
                         {% with blog_post.user as author %}
-                            <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a>
-                            <a href="{% follow_url author %}"> 
-                                {% if request.user|is_following:author %}
-                                    Unfollow {{ author.get_first_name|default:author.username }}
-                                {% else %}
-                                    Follow {{ author.get_first_name|default:author.username }}
-                                {% endif %}
-                            </a>
+                            <div class="byline-body">
+                                <h4><a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a></h4>
+                                <a class="btn btn-default follow-button" href="{% follow_url author %}"> 
+                                    {% if request.user|is_following:author %}
+                                        Unfollow {{ author.get_first_name|default:author.username }}
+                                    {% else %}
+                                        Follow {{ author.get_first_name|default:author.username }}
+                                    {% endif %}
+                                </a>
+                            </div>
                         {% endwith %}
                     {% endblock %}
                 </div>
@@ -136,9 +128,32 @@
             </div>
         </div>
         {% endblock %}
-
-        <div class="row comments">
+        
+        {% block blog_post_previous_next %}
+        <div class="row blog-paging">
             <div class="col-md-8 col-md-offset-2">
+                <ul class="pager">
+                    {% with blog_post.get_previous_by_publish_date as previous %}
+                        {% if previous %}
+                        <li class="previous">
+                            <a class="btn btn-default" href="{{ previous.get_absolute_url }}">&larr; {{ previous }}</a>
+                        </li>
+                        {% endif %}
+                    {% endwith %}
+                    {% with blog_post.get_next_by_publish_date as next %}
+                        {% if next %}
+                        <li class="next">
+                            <a class="btn btn-default" href="{{ next.get_absolute_url }}">{{ next }} &rarr;</a>
+                        </li>
+                        {% endif %}
+                    {% endwith %}
+                </ul>
+            </div>            
+        </div>
+        {% endblock %}
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 post-comments">
                 <h2>{% trans "Comments" %}</h2>
                 
                 {% block blog_post_detail_comments %}
@@ -150,33 +165,10 @@
             </div>
         </div>
         
-        {% block blog_post_previous_next %}
-        <div class="row blog-paging">
-            <div class="col-md-8 col-md-offset-2">
-                <ul class="pager">
-                    {% with blog_post.get_previous_by_publish_date as previous %}
-                        {% if previous %}
-                        <li class="previous">
-                            <a href="{{ previous.get_absolute_url }}">&larr; {{ previous }}</a>
-                        </li>
-                        {% endif %}
-                    {% endwith %}
-                    {% with blog_post.get_next_by_publish_date as next %}
-                        {% if next %}
-                        <li class="next">
-                            <a href="{{ next.get_absolute_url }}">{{ next }} &rarr;</a>
-                        </li>
-                        {% endif %}
-                    {% endwith %}
-                </ul>
-            </div>            
-        </div>
-        {% endblock %}
-        
         {% block blog_post_detail_related_posts %}
             {% if blog_post.related_posts.all %}
-            <div class="row related">
-                <div class="col-md-8 col-md-offset-2">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 blog-related">
                     <h2>{% trans 'Related posts' %}</h2>
                     {% for post in blog_post.related_posts.all %}
                     

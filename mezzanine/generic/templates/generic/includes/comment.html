@@ -26,12 +26,14 @@
     {% endif %}
     
     {% if not comment.is_removed and comment.is_public %}
-    <a href="{{ request.path }}#comment-{{ comment.id }}">
-        <span class="glyphicon glyphicon-link"></span> {% trans "Link" %}
-    </a> |
-    <a href="#reply-{{ comment.id }}" class="reply">
-        <span class="glyphicon glyphicon-share-alt"></span> {% trans "Reply" %}
-    </a>
+    <div class="comment-actions">
+        <a href="{{ request.path }}#comment-{{ comment.id }}">
+            <span class="glyphicon glyphicon-link"></span> {% trans "Link" %}
+        </a> |
+        <a href="#reply-{{ comment.id }}" class="reply">
+            <span class="glyphicon glyphicon-share-alt"></span> {% trans "Reply" %}
+        </a>
+    </div>
 
     <form class="comment-reply-form" method="post" id="reply-{{ comment.id }}"
         action="{{ comment_url }}#reply-{{ comment.id }}"
