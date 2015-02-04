@@ -356,7 +356,8 @@ footer {
       font-size: 0.875em;
       line-height: 1.57143em;
       font-weight: 400;
-      margin-bottom: 5px; }
+      margin-bottom: 5px;
+      width: 80%; }
     .blog-post .post-comments .comment .comment-actions {
       font-size: 0.75em; }
   .blog-post .post-comments form {
@@ -602,7 +603,7 @@ ul.tags {
 */
 /* Account Login/Signin */
 #account .stm-sidebar {
-  display: none; }
+  visibility: hidden; }
 #account .main {
   background: url(../img/stm-login-background.jpg) no-repeat #f17534 center center;
   -webkit-background-size: cover;
