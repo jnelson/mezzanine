@@ -278,7 +278,12 @@ footer {
 .list-post h1 {
   font-size: 2.625em;
   line-height: 1.14286em;
-  margin-bottom: 5px; }
+  margin-bottom: 2px; }
+  .list-post h1 a {
+    color: #2a2a2a; }
+    .list-post h1 a:hover, .list-post h1 a:focus {
+      text-decoration: none;
+      color: #35678e; }
 .list-post p {
   font-size: 1.125em;
   line-height: 1.77778em; }
@@ -290,6 +295,7 @@ footer {
   .list-post h3 span {
     text-transform: capitalize; }
 .list-post img {
+  margin-top: 20px;
   width: 100%; }
 
 .blog-post .blog-post-masthead {
@@ -575,80 +581,6 @@ ul.tags {
     .home-about .home-social-container .social-link.youtube {
       background: url(../img/stm-social-youtube.png) no-repeat; }
 
-/*
-.stm-footer-about {
-    
-    p {
-        
-        font-size: pem(14);
-        line-height: pem(20, 14);
-    }
-    
-    ul {
-        
-        list-style: none;
-        padding-left: 0;
-        
-        li {
-            
-            margin-right: 10px;
-            display: inline;
-        }
-    }
-}
-
-.stm-supported-by {
-    
-    h2 {
-        
-        margin-top: 0;
-        margin-bottom: 20px;
-    }
-    
-    .story-maker-supporter-link {
-        
-        display: block;
-        @extend .text-replacement;
-        text-indent: 200%; 
-        padding: 0;
-    
-        &.stm-small-world-news {
-            
-            width: 179px;
-            height: 36px;
-            background: url(../img/stm-small-world-news.gif) no-repeat;
-        }
-    
-        &.stm-scalio {
-            
-            width: 179px;
-            height: 36px;
-            background: url(../img/stm-scalio.png) no-repeat center center;
-        }
-        
-        &.stm-guardian {
-            
-            width: 205px;
-            height: 95px;
-            background: url(../img/stm-guardian-logo.gif) no-repeat;
-        }
-        
-        &.stm-free-press {
-            
-            width: 244px;
-            height: 95px;
-            background: url(../img/stm-free-press-logo.gif) no-repeat;
-        }
-        
-        &.stm-open-tech {
-            
-            width: 244px;
-            height: 36px;
-            background: url(../img/stm-open-technology.gif) no-repeat;
-        }
-    }
-}
-*/
 /* Account Login/Signin */
 #account .stm-sidebar {
   visibility: hidden; }

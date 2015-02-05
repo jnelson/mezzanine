@@ -181,7 +181,9 @@
 
             </div>
         </div>
-        
+    </div>
+    
+    <div class="col-md-12">
         {% block blog_post_detail_related_posts %}
             {% if blog_post.related_posts.all %}
             <div class="row">
@@ -190,12 +192,12 @@
                     {% for post in blog_post.related_posts.all %}
                     
                         <div class="row list-post">
-                            <div class="col-md-7">
+                            <div class="col-md-8">
                                 <h1><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h1>
                                 <p>{{ post.description|slice:":100" }}</p>
                                 <h3><span>{{ post.user.get_full_name|default:post.user.username }}</span> | <time>{{ post.publish_date|date:"F jS, Y" }}</time></h3>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 {% if settings.BLOG_USE_FEATURED_IMAGE and post.featured_image %}
                                     <img src="{{MEDIA_URL}}{{post.featured_image}}">
                                 {% endif %}
@@ -206,7 +208,7 @@
                 </div>
             </div>
             {% endif %}
-        {% endblock %}
+        {% endblock %}  
     </div>
 </div>
 
