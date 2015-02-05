@@ -36,11 +36,12 @@
     <!-- These columns reset the grid in this container -->
     
         {% block blog_post_detail_featured_image %}
-            {% if settings.BLOG_USE_FEATURED_IMAGE and blog_post.featured_image %}
             <div class="row">
                 <div class="col-md-12 blog-post-masthead">
                     <div class="background">
-                        <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 600 0 %}">
+                        {% if settings.BLOG_USE_FEATURED_IMAGE and blog_post.featured_image %}
+                            <img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 600 0 %}">
+                        {% endif %}
                     </div>
                     <div class="post-media">
                         {% with blog_post.user as author %}
@@ -59,7 +60,6 @@
                     </div>
                 </div>
             </div>
-            {% endif %}
         {% endblock %}
     
         <div class="row">
