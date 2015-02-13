@@ -41,171 +41,109 @@
 {% endif %}
 {% endblock %}
 
+
+
+
 {% block main %}
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <h4>Your Stream</h4>
-        </div>
-    
-        <div class="col-md-offset-4 col-md-4">
-            <h4>Notifications (4)</h4>
-        </div>
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-
-            {% if tag or category or year or month or author %}
-                {% block blog_post_list_filterinfo %}
-                <p>
-                {% if tag %}
-                    {% trans "Viewing posts tagged" %} {{ tag }}
-                {% else %}{% if category %}
-                    {% trans "Viewing posts for the category" %} {{ category }}
-                {% else %}{% if year or month %}
-                    {% trans "Viewing posts from" %} {% if month %}{{ month }}, {% endif %}
-                    {{ year }}
-                {% else %}{% if author %}
-                    {% trans "Viewing posts by" %}
-                    {{ author.get_full_name|default:author.username }}
-                    
-                    <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a> 
-                    <a href="{% follow_url author %}"> 
-                    {% if request.user|is_following:author %}
-                        (stop following)
-                    {% else %}
-                        (follow)
-                    {% endif %}
-                    </a>
-                    
-                {% endif %}{% endif %}{% endif %}{% endif %}
-                {% endblock %}
-                </p>
-            {% else %}
-                {% if page %}
-                {% block blog_post_list_pagecontent %}
-                {% if page.get_content_model.content %}
-                    {% editable page.get_content_model.content %}
-                    {{ page.get_content_model.content|richtext_filters|safe }}
-                    {% endeditable %}
-                {% endif %}
-                {% endblock %}
-                {% endif %}
-            {% endif %}
-
-        </div>
-    </div>
-</div>
-
-
-<div class="container">
-    <div class="row">
-
-    {% for blog_post in blog_posts.object_list %}
-    
-        <div class="stm-post col-md-12">
-    
-        {# START BLOG POST #}
-    
-        {% block blog_post_list_post_title %}
-            {% editable blog_post.title %}
-                <h2>
-                    <a href="{{ blog_post.get_absolute_url }}">{{ blog_post.title }}</a>
-                </h2>
-            {% endeditable %}
-        {% endblock %}
-    
-        {% block blog_post_list_post_metainfo %}
-            {% editable blog_post.publish_date %}
-                <h6 class="post-meta">
-                {% trans "Posted by" %}:
-                {% with blog_post.user as author %}
-                    <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a>
-                {% endwith %}
-                
-                {% with blog_post.categories.all as categories %}
-                    {% if categories %}
-                        {% trans "in" %}
-                        {% for category in categories %}
-                            <a href="{% url "blog_post_list_category" category.slug %}">{{ category }}</a>{% if not forloop.last %}, {% endif %}
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
-        
-                {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} ago{% endblocktrans %}
-                </h6>
-            {% endeditable %}
-        {% endblock %}
-    
-        {% if settings.BLOG_USE_FEATURED_IMAGE and blog_post.featured_image %}
-            {% block blog_post_list_post_featured_image %}
-                <a href="{{ blog_post.get_absolute_url }}">
-                    <img class="img-thumbnail pull-left" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 90 90 %}">
-                </a>
-            {% endblock %}
-        {% endif %}
-    
-        {% block blog_post_list_post_content %}
-            {% editable blog_post.content %}
-                {{ blog_post.description_from_content|safe }}
-            {% endeditable %}
-        {% endblock %}
-    
-        {% block blog_post_list_post_links %}
-            <div class="blog-list-detail">
-                {% keywords_for blog_post as tags %}
-                {% if tags %}
-                <ul class="list-inline tags">
-                {% trans "Tags" %}:
-                {% spaceless %}
-                {% for tag in tags %}
-                <li><a href="{% url "blog_post_list_tag" tag.slug %}" class="tag">{{ tag }}</a></li>
-                {% endfor %}
-                {% endspaceless %}
-                </ul>
-                {% endif %}
-                <p>
-                <a href="{{ blog_post.get_absolute_url }}">{% trans "read more" %}</a>
-                {% if blog_post.allow_comments %}
-                /
-                {% if settings.COMMENTS_DISQUS_SHORTNAME %}
-                <a href="{{ blog_post.get_absolute_url }}#disqus_thread"
-                    data-disqus-identifier="{% disqus_id_for blog_post %}">
-                    {% trans "Comments" %}
-                </a>
-                {% else %}
-                <a href="{{ blog_post.get_absolute_url }}#comments">
-                    {% blocktrans count comments_count=blog_post.comments_count %}{{ comments_count }} comment{% plural %}{{ comments_count }} comments{% endblocktrans %}
-                </a>
-                {% endif %}
-                {% endif %}
-                </p>
+    <div class="container stm-dashboard">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 dashboard-sections">
+                <h2><a class="selected" href="#">Your Stream</a></h2>
+                <h2><a href="#">Notifications</a><span class="notifications-count">4</span></h2>
             </div>
-        {% endblock %}
-    
-        {# END BLOG POST #}
-    
         </div>
+        {% for blog_post in blog_posts.object_list %}
+
+                {% comment "Should use this if there is no media" %}
+                {% if settings.BLOG_USE_FEATURED_IMAGE and blog_post.featured_image %}
+                    {% block blog_post_list_post_featured_image %}
+                        <a href="{{ blog_post.get_absolute_url }}">
+                            <img class="img-thumbnail pull-left" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 90 90 %}">
+                        </a>
+                    {% endblock %}
+                {% endif %}
+                {% endcomment %}
     
-    {% endfor %}
-
+                <div class="row list-post">
+                    <div class="col-md-6 col-md-offset-2">
+                        
+                        {% block blog_post_list_post_title %}
+                            {% editable blog_post.title %}
+                                <h1><a href="{{ blog_post.get_absolute_url }}">{{ blog_post.title }}</a></h1>
+                            {% endeditable %}
+                        {% endblock %}
+                        
+                        <div class="blog-post-body">
+                        {% block blog_post_list_post_content %}
+                            {% editable blog_post.content %}
+                                {{ blog_post.description_from_content|safe|slice:":100" }}
+                                <a href="{{ blog_post.get_absolute_url }}">{% trans "read more" %}</a>
+                            {% endeditable %}
+                        {% endblock %}
+                        </div>
+                        
+                        <h3>
+                        {% block blog_post_list_post_metainfo %}
+                            {% with blog_post.user as author %}
+                                <span>{{ author.get_full_name|default:author.username }}</span>
+                            {% endwith %}
+                            | 
+                            <time>{{ blog_post.publish_date|date:"F jS, Y" }}</time>                            
+                            
+                            {% if blog_post.allow_comments %}
+                                |
+                                {% if settings.COMMENTS_DISQUS_SHORTNAME %}
+                                <a href="{{ blog_post.get_absolute_url }}#disqus_thread"
+                                    data-disqus-identifier="{% disqus_id_for blog_post %}">
+                                    {% trans "Comments" %}
+                                </a>
+                                {% else %}
+                                <a class="comments-count" href="{{ blog_post.get_absolute_url }}#comments">
+                                    {% blocktrans count comments_count=blog_post.comments_count %}{{ comments_count }} comment{% plural %}{{ comments_count }} comments{% endblocktrans %}
+                                </a>
+                                {% endif %}
+                            {% endif %}
+                        {% endblock %}
+                        </h3>
+                        
+                    </div>
+                    
+                    <div class="col-md-2">
+                        
+                        <div class="tags-container">
+                            {% block blog_post_list_post_links %}
+                            {% keywords_for blog_post as tags %}
+                            {% if tags %}
+                            {% spaceless %}
+                            <ul class="tags">
+                                {% for tag in tags %}
+                                <li><a href="{% url "blog_post_list_tag" tag.slug %}">{{ tag }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            {% endspaceless %}
+                            {% endif %}
+                            {% endblock %}
+                        </div>
+                        
+                    </div>
+                </div>
+                
+        {% endfor %}
+        
+        <div class="row blog-paging">
+            <div class="col-md-8 col-md-offset-2">
+                {% pagination_for blog_posts %}            
+            </div>            
+        </div>
+        
     </div>
-</div>
-
-
-
-{% pagination_for blog_posts %}
-
-{% if settings.COMMENTS_DISQUS_SHORTNAME %}
-{% include "generic/includes/disqus_counts.html" %}
-{% endif %}
+        
+    {% if settings.COMMENTS_DISQUS_SHORTNAME %}
+        {% include "generic/includes/disqus_counts.html" %}
+    {% endif %}
 
 {% endblock %}
 
 {% block right_panel %}
-{% include "blog/includes/filter_panel.html" %}
+    {% include "blog/includes/filter_panel.html" %}
 {% endblock %}

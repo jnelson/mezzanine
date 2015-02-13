@@ -1,4 +1,74 @@
 
+.stm-dashboard {
+    
+    .dashboard-sections {
+        
+        margin-top: 20px;
+        
+        h2 {
+            
+            display: inline;
+            margin-right: 26px;
+        
+            a {
+                
+                color: $black;
+                padding-bottom: 4px;
+                
+                &.selected {
+                    
+                    border-bottom: 2px solid $black;
+                }
+                
+                &:hover {
+                    
+                    text-decoration: none;
+                    border-color: $orange;
+                    color: $orange;
+                }
+            }
+        }
+        
+        .notifications-count {
+
+            display: inline-block;
+            padding: 3px 5px 5px 7px;
+            @include border-radius(30px);
+            background: $orange;
+            color: #FFF;
+            text-align: center;
+            margin-left: 6px;
+        }
+    }
+    
+    .list-post {
+        
+        margin-bottom: 20px;
+        
+        .comments-count {
+            
+            text-transform: capitalize;
+            color: $black;
+            
+            &:hover {
+                
+                color: $highlight;
+            }
+        }
+        
+        .tags-container {
+            
+            margin-top: 30px;
+        }
+    }
+    
+    .blog-paging {
+        
+        text-align: center;
+    }
+}
+
+
 .stm-sidebar {
     
     .stm-blog-profile {
@@ -97,6 +167,5 @@
             font-weight: 600;
         }
        
-    }
-    
+    }   
 }
