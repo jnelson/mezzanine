@@ -774,3 +774,40 @@ ul.tags {
       padding-left: 0; }
       .stm-sidebar .stm-navigation-tree li a:hover {
         color: #b3c935; }
+
+.stm-sidebar-color-default,
+.stm-sidebar-color-turquoise {
+  background: #008aa8; }
+  .stm-sidebar-color-default h4,
+  .stm-sidebar-color-default .stm-blog-profile h1,
+  .stm-sidebar-color-default .stm-blog-profile label,
+  .stm-sidebar-color-default .stm-blog-groups h5,
+  .stm-sidebar-color-default .stm-blog-groups p,
+  .stm-sidebar-color-default .stm-saved-search ul li a,
+  .stm-sidebar-color-default .stm-navigation-tree li a,
+  .stm-sidebar-color-turquoise h4,
+  .stm-sidebar-color-turquoise .stm-blog-profile h1,
+  .stm-sidebar-color-turquoise .stm-blog-profile label,
+  .stm-sidebar-color-turquoise .stm-blog-groups h5,
+  .stm-sidebar-color-turquoise .stm-blog-groups p,
+  .stm-sidebar-color-turquoise .stm-saved-search ul li a,
+  .stm-sidebar-color-turquoise .stm-navigation-tree li a {
+    color: white; }
+  .stm-sidebar-color-default .stm-blog-group-title,
+  .stm-sidebar-color-default .stm-blog-profile .stm-blog-portrait,
+  .stm-sidebar-color-default .stm-blog-profile .stm-blog-portrait img.user-portrait,
+  .stm-sidebar-color-default .stm-navigation-tree .row,
+  .stm-sidebar-color-turquoise .stm-blog-group-title,
+  .stm-sidebar-color-turquoise .stm-blog-profile .stm-blog-portrait,
+  .stm-sidebar-color-turquoise .stm-blog-profile .stm-blog-portrait img.user-portrait,
+  .stm-sidebar-color-turquoise .stm-navigation-tree .row {
+    border-color: #3da6bd; }
+  .stm-sidebar-color-default .stm-blog-profile .settings-cta .btn-default, .stm-sidebar-color-default .stm-blog-profile .settings-cta .pager li > a, .pager .stm-sidebar-color-default .stm-blog-profile .settings-cta li > a,
+  .stm-sidebar-color-turquoise .stm-blog-profile .settings-cta .btn-default,
+  .stm-sidebar-color-turquoise .stm-blog-profile .settings-cta .pager li > a,
+  .pager .stm-sidebar-color-turquoise .stm-blog-profile .settings-cta li > a {
+    color: white;
+    border-color: #3da6bd; }
+  .stm-sidebar-color-default .stm-navigation-tree li a:hover,
+  .stm-sidebar-color-turquoise .stm-navigation-tree li a:hover {
+    color: #b3c935; }

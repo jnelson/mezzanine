@@ -1,0 +1,54 @@
+
+@mixin sidebar-color-template( 
+
+    $textColor: #FFF, 
+    $baseColor: #008aa8, 
+    $highlightColor: #3da6bd, 
+    $hoverColor: $brand-green ) {
+    
+    background: $baseColor;
+    
+    h4, 
+    .stm-blog-profile h1,
+    .stm-blog-profile label,
+    .stm-blog-groups h5,
+    .stm-blog-groups p,
+    .stm-saved-search ul li a,
+    .stm-navigation-tree li a {
+
+        color: $textColor;
+    }
+    
+    .stm-blog-group-title,
+    .stm-blog-profile .stm-blog-portrait,
+    .stm-blog-profile .stm-blog-portrait img.user-portrait,
+    .stm-navigation-tree .row {
+        
+        border-color: $highlightColor;
+    }
+
+    .stm-blog-profile .settings-cta .btn-default {
+        
+        color: $textColor;
+        border-color: $highlightColor; 
+    }
+    
+    .stm-navigation-tree li a:hover {
+                    
+        color: $hoverColor;
+    }
+}
+
+
+// Different color versions can be made here
+
+.stm-sidebar-color-default,
+.stm-sidebar-color-turquoise {
+    
+    @include sidebar-color-template(#FFF, #008aa8, #3da6bd, $brand-green)
+}
+
+
+
+
+
