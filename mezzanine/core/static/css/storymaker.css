@@ -141,6 +141,7 @@ h2 {
 
 /* Footer */
 footer {
+  margin-top: 0;
   background: #FFF; }
   footer .nav-footer {
     margin: 0;
@@ -680,49 +681,96 @@ ul.tags {
 .stm-dashboard .blog-paging {
   text-align: center; }
 
-.stm-sidebar .stm-blog-profile .stm-blog-portrait {
-  height: 210px;
-  border-bottom: 1px solid #e7e7e7;
-  text-align: center; }
-  .stm-sidebar .stm-blog-profile .stm-blog-portrait .user-portrait {
-    padding-top: 18px;
-    width: 100%;
-    max-width: 216px; }
-.stm-sidebar .stm-blog-profile h1 {
-  text-align: center;
-  font-size: 1.125em;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.11em;
-  margin-bottom: 10px; }
-.stm-sidebar .stm-blog-profile h4 {
-  font-size: 0.875em;
-  margin-bottom: 0; }
-.stm-sidebar .stm-blog-profile label {
-  font-size: 1.125em; }
-.stm-sidebar .stm-blog-profile .settings-cta {
-  margin-top: 10px; }
-  .stm-sidebar .stm-blog-profile .settings-cta .btn-default, .stm-sidebar .stm-blog-profile .settings-cta .pager li > a, .pager .stm-sidebar .stm-blog-profile .settings-cta li > a {
-    width: 100%; }
-.stm-sidebar .stm-blog-groups h3 {
-  font-size: 0.875em;
-  font-weight: 600; }
-.stm-sidebar .stm-blog-groups .user-portrait {
-  width: 100%;
-  margin-top: 8px; }
-.stm-sidebar .stm-blog-groups h5 {
-  font-size: 0.875em;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.11em;
-  margin-bottom: 4px; }
-.stm-sidebar .stm-blog-groups p {
-  font-size: 0.75em;
-  line-height: 1.33333em; }
-.stm-sidebar .stm-blog-groups .col-md-3 {
-  padding-right: 0; }
-.stm-sidebar .stm-blog-groups .col-md-9 {
-  padding-left: 0; }
-.stm-sidebar .stm-saved-search h3 {
-  font-size: 0.875em;
-  font-weight: 600; }
+.stm-sidebar {
+  background: #008aa8; }
+  .stm-sidebar h4 {
+    font-size: 0.75em;
+    margin-bottom: 0;
+    color: #FFF;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.12em; }
+  .stm-sidebar .stm-blog-group-title {
+    border-top: 2px solid #3da6bd;
+    padding: 10px 0; }
+  .stm-sidebar .stm-blog-profile .stm-blog-portrait {
+    border-bottom: 2px solid #3da6bd;
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 15px; }
+    .stm-sidebar .stm-blog-profile .stm-blog-portrait img.user-portrait {
+      margin-top: 18px;
+      width: 100%;
+      max-width: 150px;
+      border: 5px solid #3da6bd;
+      -webkit-border-radius: 50%;
+      -khtml-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -o-border-radius: 50%;
+      -ms-border-radius: 50%;
+      border-radius: 50%; }
+  .stm-sidebar .stm-blog-profile h1 {
+    text-align: center;
+    font-size: 1.125em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+    margin-bottom: 10px;
+    margin-top: 14px;
+    color: #FFF; }
+  .stm-sidebar .stm-blog-profile label {
+    font-size: 1.125em;
+    color: #FFF; }
+  .stm-sidebar .stm-blog-profile .settings-cta {
+    margin-top: 10px;
+    margin-bottom: 22px; }
+    .stm-sidebar .stm-blog-profile .settings-cta .btn-default, .stm-sidebar .stm-blog-profile .settings-cta .pager li > a, .pager .stm-sidebar .stm-blog-profile .settings-cta li > a {
+      color: #FFF;
+      width: 100%;
+      border-color: #3DA6BD; }
+  .stm-sidebar .stm-blog-groups {
+    margin-bottom: 15px; }
+    .stm-sidebar .stm-blog-groups h3 {
+      font-size: 0.875em;
+      font-weight: 600; }
+    .stm-sidebar .stm-blog-groups .user-portrait {
+      width: 100%;
+      margin-top: 8px;
+      border: 5px solid #2a2a2a;
+      -webkit-border-radius: 50%;
+      -khtml-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -o-border-radius: 50%;
+      -ms-border-radius: 50%;
+      border-radius: 50%; }
+    .stm-sidebar .stm-blog-groups h5 {
+      font-size: 0.75em;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #FFF; }
+    .stm-sidebar .stm-blog-groups p {
+      font-size: 0.75em;
+      line-height: 1.33333em;
+      color: #FFF; }
+    .stm-sidebar .stm-blog-groups .col-md-3 {
+      padding-right: 0; }
+    .stm-sidebar .stm-blog-groups .col-md-9 {
+      padding-left: 0; }
+  .stm-sidebar .stm-saved-search ul {
+    list-style: none;
+    padding: 0; }
+    .stm-sidebar .stm-saved-search ul li {
+      font-size: 0.75em;
+      font-weight: 600; }
+      .stm-sidebar .stm-saved-search ul li a {
+        color: #FFF; }
+  .stm-sidebar .stm-navigation-tree {
+    padding-bottom: 40px; }
+    .stm-sidebar .stm-navigation-tree .row {
+      border-top: 2px solid #3da6bd;
+      padding-top: 15px; }
+    .stm-sidebar .stm-navigation-tree li a {
+      color: #FFF;
+      padding-left: 0; }
+      .stm-sidebar .stm-navigation-tree li a:hover {
+        color: #b3c935; }
