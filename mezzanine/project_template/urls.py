@@ -28,6 +28,7 @@ urlpatterns += patterns('',
     # few patterns you can use to set it up.
 
     url("^$", "storymaker.views.home", name="home"),
+    url("^app/", "storymaker.views.app", name="app"),
     url(r'^burundi/$', "storymaker.views.burundi_blog_view", name="burundi"),
     # HOMEPAGE AS STATIC TEMPLATE
     # ---------------------------

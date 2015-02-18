@@ -19,6 +19,14 @@ def home(request, template="index.html"):
                           context_instance=RequestContext(request))
 
 
+def app(request, template="app.html"):
+    logger.debug('App upsell')
+    featured_users = User.objects.all()[:8]
+    my_data_dictionary = {"featured_users": featured_users, "foo": "bar"}
+    return render_to_response(template,
+                          my_data_dictionary,
+                          context_instance=RequestContext(request))
+
 def user_profile(request, user):
     """
         Placeholder for user profile page, etc
