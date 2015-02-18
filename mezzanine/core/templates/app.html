@@ -97,14 +97,6 @@
 {% endif %}
 {% endnevercache %}
 
-<!-- <h1>{% block title %}{% endblock %}</h1>
-
-<ul class="breadcrumb">
-{% spaceless %}
-{% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
-{% endspaceless %}
-</ul> -->
-
 </div>
 
 <div class="container-fluid">
@@ -118,28 +110,104 @@
      -->
     <div class="middle">
         {% block main %}
+        
+        
         {% blocktrans %}
-    
-        <div class="container-fluid banner mission">
-        	<div>
-            	
+        <div class="container-fluid banner app-callout">
+        	<div>	
             	<div class="container">
                 	<div class="row">
-            	
-                		<div class="col-md-12">
-                			<h1>StoryMaker enables aspiring journalists all over the world to safely produce and publish professional-grade news with their phone.</h1>
-                			<h1>TEST TEST TEST</h1>
-                		</div>
-        	
-                	</div>
+        				<div class="col-md-6 col-md-offset-1">
+        					<h1>Make your story great.</h1>
+        				</div>
+        			</div>
+        			
+        			<div class="row">
+            			<div class="col-md-6 col-md-offset-1">
+                            <p>StoryMaker enables aspiring journalists all over the world to safely produce and publish professional-grade news with their phone.</p>
+            			</div>
+        			</div>
+        
+        			<div class="row">
+            			<div class="col-md-6 col-md-offset-1">
+            				<a class="google-play-badge">Google Play Store</a>
+            				<a class="f-droid-badge" href="#stm-f-droid-install">Install Securely with F-Droid</a> 
+            			</div>
+        			</div>
             	</div>
         		
         	</div>
-        </div>	
-        {% endblocktrans %}
+        </div>
+        {% endblocktrans %}	
+        
+        <div class="container-fluid app-feature app-feature-learn">
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-1">
+                            <div class="text-block">
+                                <h1>Learn.</h1>
+                                <p>The app’s built-in textbook will teach you how to be a mobile journalist while you use templates to give your story structure.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <img class="device" src="{% static "img/app-feature-device-learn.png" %}" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-fluid app-feature app-feature-make">
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img class="device" src="{% static "img/app-feature-device-make.png" %}" alt="" />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-block">
+                                <h1>Make.</h1>
+                                <p>Produce photo, audio, or video stories. Overlays will improve your compositions. Drag and drop editing makes finishing fast.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-fluid app-feature app-feature-share">
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-md-offset-1">
+                            <div class="text-block">
+                                <h1>Share.</h1>
+                                <p>You own your stories, publish them to any service or platform available on android and to StoryMaker.org.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img class="device" src="{% static "img/app-feature-device-share.png" %}" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
         
         <div class="container featured-makers">
         
+            <div>
+        		<h2>Made With Storymaker</h2>
+        	</div>
+            
             <div class="row"><!-- Recent Posts -->
             {% load blog_tags keyword_tags i18n %}
             {% blog_recent_posts 6 as recent_posts %}
@@ -163,37 +231,11 @@
             {% endif %}
             </div><!-- /Recent Posts -->
         </div>
-        
-        {% blocktrans %}
-        <div class="container-fluid banner app-callout">
-        	<div>	
-            	<div class="container">
-                	<div class="row">
-        				<div class="col-md-6 col-md-offset-1">
-        					<h1>Learn. Make. Share.</h1>
-        				</div>
-        			</div>
-        			
-        			<div class="row">
-            			<div class="col-md-6 col-md-offset-1">
-            				<p>Produce and publish professional-grade news with your Android phone, as safely and securely as possible.</p>
-            			</div>
-        			</div>
-        
-        			<div class="row">
-            			<div class="col-md-6 col-md-offset-1">
-            				<button class="btn btn-default">Learn More</button>
-            			</div>
-        			</div>
-            	</div>
-        		
-        	</div>
-        </div>
-        {% endblocktrans %}	
-        
+                
         <div class="container featured-story-makers">
+            <hr/>
         	<div>
-        		<h2>Featured Story Makers </h2>
+        		<h2>Featured Story Makers</h2>
         	</div>
         
         	<div class="row">
@@ -212,7 +254,7 @@
                 {% endfor %}
         	</div>
         </div>
-        
+                
         <div class="container-fluid small-app-callout">
             <hr/>
         	<div>	
@@ -222,12 +264,53 @@
         					<h4>Start creating stories now with the StoryMaker Beta for Android.</h4>
         				</div>
         				<div class="col-md-2">
-        					<a class="google-play-badge">Google Play Store</a> 
+        					<a class="google-play-badge">Google Play Store</a>
         				</div>
         			</div>
             	</div>
         	</div>
         </div>
+        
+        <div class="container-fluid f-droid-install" id="stm-f-droid-install">
+            <hr/>
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 header">
+                            <h1>Install Securely with F-Droid</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt ex sed mauris rhoncus mollis.</p>
+                        </div>
+                    </div>
+                    
+                    <ul class="row">
+                        <li class="col-md-4">
+                            <div class="image-container">
+                                <a href="#"><img src="{% static "img/f-droid.jpg" %}" alt="F-Droid" /></a>
+                            </div>
+                            <h3>1. <a href="#">Download</a> F-Droid</h3>
+                            <p>F-Droid is an installable catalog of free and open source software right on your device.</p>
+                        </li>
+                        <li class="col-md-4 f-droid-add-repo">
+                            <div class="image-container">
+                                <img src="{% static "img/f-droid-repo-qr.gif" %}" alt="F-Droid" />
+                                <input class="copy-field" type="text" value="https://s3.amazonaws.com/storymaker/fdroid/repo" readonly>
+                            </div>
+                            <h3>2. Add the StoryMaker Repository</h3>
+                            <p>Adding the StoryMaker repository to F-Droid gives you access to StoryMaker and other apps by StoryMaker supporters.</p>
+                        </li>
+                        <li class="col-md-4">
+                            <div class="image-container">
+                                <img src="{% static "img/f-droid-device.jpg" %}" alt="F-Droid" />
+                            </div>
+                            <h3>3. Install Apps</h3>
+                            <p>Install StoryMaker and other apps on your device.</p>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+        
         
         <div class="container-fluid home-supported-by">
             <hr/>	

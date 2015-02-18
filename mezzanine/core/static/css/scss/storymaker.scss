@@ -105,6 +105,26 @@ iframe {
     border: none;
 }
 
+a.google-play-badge {
+
+    display: block;
+    background: url(../img/google-play-badge.png) no-repeat;
+    width: 172px;
+    height: 60px;
+            
+    @extend .text-replacement;  
+}
+
+a.f-droid-badge {
+
+    display: block;
+    background: url(../img/f-droid-badge.png) no-repeat;
+    width: 200px;
+    height: 60px;
+            
+    @extend .text-replacement;  
+}
+
 
 /*  Headers */
 
@@ -305,9 +325,14 @@ footer {
 @import 'messages';
 
 
-/* Account Login/Signin */
+/* Homepage */
 
 @import 'home';
+
+
+/* App Upsell Page */
+
+@import 'app';
 
 
 /* Account Login/Signin */

@@ -7,7 +7,7 @@
   .clearfix:after {
     clear: both; }
 
-.text-replacement, .small-app-callout a.google-play-badge, .home-supported-by .story-maker-supporter-link, .home-about .home-social-container .social-link {
+.text-replacement, a.google-play-badge, a.f-droid-badge, .home-supported-by .story-maker-supporter-link, .home-about .home-social-container .social-link {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden; }
@@ -58,6 +58,18 @@ a {
 
 iframe {
   border: none; }
+
+a.google-play-badge {
+  display: block;
+  background: url(../img/google-play-badge.png) no-repeat;
+  width: 172px;
+  height: 60px; }
+
+a.f-droid-badge {
+  display: block;
+  background: url(../img/f-droid-badge.png) no-repeat;
+  width: 200px;
+  height: 60px; }
 
 /*  Headers */
 h2 {
@@ -202,7 +214,7 @@ footer {
       .message-container .alert .close:hover {
         opacity: 1; }
 
-/* Account Login/Signin */
+/* Homepage */
 /* Home */
 .banner {
   background-color: aqua; }
@@ -518,11 +530,6 @@ ul.tags {
     margin-top: 50px; }
   .small-app-callout h4 {
     font-size: 1.75em; }
-  .small-app-callout a.google-play-badge {
-    display: block;
-    background: url(../img/google-play-badge.png) no-repeat;
-    width: 172px;
-    height: 60px; }
 
 /* Supported By */
 .home-supported-by {
@@ -584,6 +591,78 @@ ul.tags {
       background: url(../img/stm-social-instagram.png) no-repeat; }
     .home-about .home-social-container .social-link.youtube {
       background: url(../img/stm-social-youtube.png) no-repeat; }
+
+/* App Upsell Page */
+/* App Upsell */
+.app-callout .google-play-badge {
+  margin-top: 5px;
+  float: left; }
+.app-callout .f-droid-badge {
+  margin-top: 5px;
+  margin-left: 10px;
+  float: left; }
+
+.app-feature {
+  height: 590px;
+  border-bottom: 1px solid #e7e7e7; }
+  .app-feature h1 {
+    font-size: 2.75em; }
+  .app-feature p {
+    font-size: 1.25em;
+    line-height: 1.4em;
+    width: 80%; }
+
+.app-feature-learn {
+  background: url(../img/app-feature-learn.gif) no-repeat center bottom; }
+  .app-feature-learn .text-block {
+    margin-top: 208px; }
+  .app-feature-learn .device {
+    margin-top: 28px; }
+
+.app-feature-make {
+  background: url(../img/app-feature-make.gif) no-repeat center bottom;
+  overflow: hidden; }
+  .app-feature-make .text-block {
+    margin-top: 206px; }
+  .app-feature-make .device {
+    margin-top: 5px; }
+
+.app-feature-share {
+  background: url(../img/app-feature-share.gif) no-repeat center bottom; }
+  .app-feature-share .text-block {
+    margin-top: 170px; }
+  .app-feature-share .device {
+    margin-left: 26px; }
+
+.featured-makers {
+  padding-top: 0px; }
+  .featured-makers h2 {
+    text-align: center;
+    margin: 60px 0 40px; }
+
+.f-droid-install .header {
+  text-align: center;
+  margin-bottom: 20px; }
+  .f-droid-install .header h1 {
+    margin-bottom: 5px; }
+.f-droid-install ul {
+  list-style: none; }
+  .f-droid-install ul li {
+    padding-left: 0;
+    padding-right: 45px; }
+    .f-droid-install ul li:last-child {
+      padding-right: 0; }
+    .f-droid-install ul li .image-container {
+      height: 252px;
+      text-align: center; }
+    .f-droid-install ul li.f-droid-add-repo img {
+      width: 220px;
+      margin-top: 5px; }
+    .f-droid-install ul li.f-droid-add-repo input {
+      width: 90%;
+      font-size: 0.8125em;
+      padding: 1px 3px;
+      outline: none; }
 
 /* Account Login/Signin */
 #account .stm-sidebar {

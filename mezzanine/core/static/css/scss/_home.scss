@@ -165,16 +165,6 @@
         
         font-size: pem(28);
     }
-    
-    a.google-play-badge {
-    
-        display: block;
-        background: url(../img/google-play-badge.png) no-repeat;
-        width: 172px;
-        height: 60px;
-                
-        @extend .text-replacement;  
-    }
 }
 
 

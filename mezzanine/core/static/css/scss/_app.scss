@@ -1,0 +1,147 @@
+/* App Upsell */
+
+.app-callout {
+    
+    .google-play-badge {
+        
+        margin-top: 5px;
+        float: left;
+    }
+    
+    .f-droid-badge {
+        
+        margin-top: 5px;
+        margin-left: 10px;
+        float: left;
+    }
+}
+
+.app-feature {
+    
+    height: 590px;
+    border-bottom: 1px solid $rule;
+    
+    h1 {
+        
+        font-size: pem(44);
+    }
+    
+    p {
+        
+        font-size: pem(20);
+        line-height: pem(28, 20);
+        width: 80%;
+    }
+}
+
+.app-feature-learn {
+    
+    background: url(../img/app-feature-learn.gif) no-repeat center bottom;
+    
+    .text-block {
+        
+        margin-top: 208px;
+    }
+    
+    .device {
+        
+        margin-top: 28px;
+    }
+}
+
+.app-feature-make {
+    
+    background: url(../img/app-feature-make.gif) no-repeat center bottom;
+    overflow: hidden;
+
+    .text-block {
+        
+        margin-top: 206px;
+    }
+
+    .device {
+        
+        margin-top: 5px;
+    }
+}
+
+.app-feature-share {
+    
+    background: url(../img/app-feature-share.gif) no-repeat center bottom;
+    
+    .text-block {
+        
+        margin-top: 170px;
+    }
+    
+    .device {
+        
+        margin-left: 26px;
+    }
+}
+
+.featured-makers {
+    
+    padding-top: 0px;
+    
+    h2 {
+    
+        text-align: center;
+        margin: 60px 0 40px;
+    }
+}
+
+.f-droid-install {
+    
+    .header {
+        
+        text-align: center;
+        margin-bottom: 20px;
+        
+        h1 {
+            
+            margin-bottom: 5px;
+        }
+    }
+    
+    ul {
+        
+        list-style: none;
+        
+        li {
+            
+            padding-left: 0;
+            padding-right: 45px;
+        
+            &:last-child {
+                
+                padding-right: 0;
+            }
+            
+            .image-container {
+                
+                height: 252px;
+                text-align: center;
+            }
+            
+            &.f-droid-add-repo {
+                
+                img {
+                    
+                    width: 220px;
+                    margin-top: 5px;
+                }
+                
+                input {
+                    
+                    width: 90%;
+                    font-size: pem(13);
+                    padding: 1px 3px;
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+

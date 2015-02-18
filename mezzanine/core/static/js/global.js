@@ -10,4 +10,8 @@ $(function() {
         
     $brand.html(start + "<span>" + end + "</span>");
     
+    $('.copy-field').focus(function(){
+        
+        this.select();
+    });
 });
