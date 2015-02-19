@@ -93,6 +93,12 @@
 
 .f-droid-install {
     
+    h4 {
+        
+        font-size: pem(18);
+        line-height: pem(28, 18);
+    }
+    
     .header {
         
         text-align: center;
@@ -141,6 +147,14 @@
                 }
             }
         }
+    }
+    
+    .caption {
+        
+        padding-top: 20px;
+        text-align: center;
+        border-top: 1px solid $rule;
+        margin-top: 10px;
     }
 }
 
