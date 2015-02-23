@@ -125,7 +125,8 @@ h2 {
 
 /* Sidebar */
 .stm-sidebar {
-  border-right: 1px solid #e7e7e7; }
+  /* border-right: 1px solid #e7e7e7; */
+}
   .stm-sidebar .panel {
     border-radius: 0;
     border: none;
@@ -491,14 +492,33 @@ footer {
   margin-top: 0; }
 
 /* Dashboard */
+.stm-sidebar .stm-blog-profile.stm-blog-profile-burundi {
+    margin-top: 105px;
+}
+.stm-sidebar .stm-blog-profile.stm-blog-profile-burundi .stm-blog-portrait {
+    height: auto;
+    padding-bottom: 23px;
+    border-right: 1px solid #e7e7e7;
+}
+.stm-sidebar .stm-blog-profile.stm-blog-profile-burundi .stm-blog-groupname {
+    border-right: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    padding-bottom: 10px;
+}
+.stm-sidebar .stm-blog-profile.stm-blog-profile-burundi .stm-blog-groupdesc {
+    border-right: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 1em 1.3ex 1.2em 1.3ex;
+    line-height: 1.4em;
+}
 .stm-sidebar .stm-blog-profile .stm-blog-portrait {
   height: 210px;
   border-bottom: 1px solid #e7e7e7;
   text-align: center; }
-  .stm-sidebar .stm-blog-profile .stm-blog-portrait .user-portrait {
-    padding-top: 18px;
-    width: 100%;
-    max-width: 216px; }
+.stm-sidebar .stm-blog-profile .stm-blog-portrait .user-portrait {
+  padding-top: 18px;
+  width: 100%;
+  max-width: 216px; }
 .stm-sidebar .stm-blog-profile h1 {
   text-align: center;
   font-size: 1.125em;
@@ -513,8 +533,8 @@ footer {
   font-size: 1.125em; }
 .stm-sidebar .stm-blog-profile .settings-cta {
   margin-top: 10px; }
-  .stm-sidebar .stm-blog-profile .settings-cta .btn-default {
-    width: 100%; }
+.stm-sidebar .stm-blog-profile .settings-cta .btn-default {
+  width: 100%; }
 .stm-sidebar .stm-blog-groups h3 {
   font-size: 0.875em;
   font-weight: 600; }
@@ -537,3 +557,11 @@ footer {
 .stm-sidebar .stm-saved-search h3 {
   font-size: 0.875em;
   font-weight: 600; }
+
+.cat-header {
+  background: url("/static/img/burundi_header.png") no-repeat scroll 0px 0px transparent;
+  height: 103px;
+  margin-left: -400px;
+  width: 1606px;
+}
+
