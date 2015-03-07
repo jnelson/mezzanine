@@ -105,7 +105,7 @@ MANAGERS = ADMINS
 ALLOWED_HOSTS = []
 env_host = os.environ.get('DJANGO_ALLOWED_HOSTS')
 if env_host:
-    ALLOWED_HOSTS = env_host + ALLOWED_HOSTS
+    ALLOWED_HOSTS.append(env_host)
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
