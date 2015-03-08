@@ -176,17 +176,17 @@ AUTH_PROFILE_MODULE = "project_template.UserProfile"
 DATABASES = {
     "default": {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
         # DB name or path to database file if using sqlite3.
         "NAME": "",
         # Not used with sqlite3.
-        "USER": "",
+        "USER": os.environ.get('DATABASE_USER'),
         # Not used with sqlite3.
-        "PASSWORD": "",
+        "PASSWORD": os.environ.get('DATABASE_PASSWORD'),
         # Set to empty string for localhost. Not used with sqlite3.
-        "HOST": "",
+        "HOST": os.environ.get('DATABASE_HOST'),
         # Set to empty string for default. Not used with sqlite3.
-        "PORT": "",
+        "PORT": os.environ.get('DATABASE_PORT'),
     }
 }
 
@@ -367,8 +367,6 @@ if env_host:
     ALLOWED_HOSTS.append(env_host)
 
 #DJANGO_SETTINGS_MODULE
-#DATABASE_USER
-#DATABASE_PASSWORD
 #EMAIL_HOST
 #EMAIL_HOST_USER
 #EMAIL_HOST_PASSWORD
