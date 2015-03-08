@@ -29,7 +29,8 @@ urlpatterns += patterns('',
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
 
-    url("^$", "storymaker.views.home", name="home"),
+    url("^$", "storymaker.views.index", name="index"),
+    url("^home/", "storymaker.views.home", name="home"),
     url("^app/", "storymaker.views.app", name="app"),
     url(r'^burundi/$', "storymaker.views.burundi_blog_view", name="burundi"),
     
