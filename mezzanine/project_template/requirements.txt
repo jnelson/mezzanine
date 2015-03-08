@@ -1,18 +1,22 @@
 Django==1.7
 Fabric==1.10.0
 Markdown==2.5.1
--e git+https://github.com/scalio/mezzanine.git@4d854ef5aaafc4c52126a540cc97eb1867d8e2f4#egg=Mezzanine-storymaker
 Pillow==2.6.0
 PyYAML==3.11
 Pygments==1.6
+Werkzeug==0.9.6
 argparse==1.2.1
 beautifulsoup4==4.1.3
 bleach==1.4
 bugjar==0.1.0
 django-activity-stream==0.5.0
 django-braces==1.4.0
+django-debug-toolbar==1.2.2
+django-debugtools==1.2.1
+django-extensions==1.4.8
 django-filter==0.8
 django-oauth2-provider==0.2.7-dev
+django-organizations==0.4.3
 django-rest-swagger==0.2.8
 djangorestframework==3.0.0
 ecdsa==0.11
@@ -31,6 +35,7 @@ requests==2.4.1
 requests-oauthlib==0.4.1
 shortuuid==0.4.2
 six==1.8.0
+sqlparse==0.1.13
 tkreadonly==0.5.3
 tzlocal==1.0
 uWSGI==2.0.8

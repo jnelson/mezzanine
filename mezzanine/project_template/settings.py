@@ -267,6 +267,7 @@ INSTALLED_APPS = (
     "mezzanine.mobile",
     'actstream',
     'rest_framework_swagger',
+    'organizations',
 )
 
 # List of processors used by RequestContext to populate the context.
