@@ -102,9 +102,6 @@ MANAGERS = ADMINS
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
-env_host = os.environ.get('DJANGO_ALLOWED_HOSTS')
-if env_host:
-    ALLOWED_HOSTS.append(env_host)
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -362,6 +359,20 @@ OPTIONAL_APPS = (
 # Allow any settings to be defined in local_settings.py which should be
 # ignored in your version control system allowing for settings to be
 # defined per machine.
+
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+
+env_host = os.environ.get('DJANGO_ALLOWED_HOSTS')
+if env_host:
+    ALLOWED_HOSTS.append(env_host)
+
+#DJANGO_SETTINGS_MODULE
+#DATABASE_USER
+#DATABASE_PASSWORD
+#EMAIL_HOST
+#EMAIL_HOST_USER
+#EMAIL_HOST_PASSWORD
+
 try:
     from local_settings import *
 except ImportError as e:
