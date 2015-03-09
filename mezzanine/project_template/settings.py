@@ -371,6 +371,10 @@ if env_host:
 #EMAIL_HOST_USER
 #EMAIL_HOST_PASSWORD
 
+STATICFILES_DIRS = [
+    '../core/static',
+]
+
 try:
     from local_settings import *
 except ImportError as e:
