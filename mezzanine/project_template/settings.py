@@ -268,6 +268,7 @@ INSTALLED_APPS = (
     "mezzanine.mobile",
     'actstream',
     'rest_framework_swagger',
+    'djrill',
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -314,6 +315,9 @@ MIDDLEWARE_CLASSES = (
 # at the moment we are using custom forks of them.
 PACKAGE_NAME_FILEBROWSER = "filebrowser_safe"
 PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
+
+MANDRILL_API_KEY = os.environ.get('MANDRILL_API_KEY')
+EMAIL_BACKEND = "djrill.mail.backends.djrill.DjrillBackend"
 
 #########################
 # OPTIONAL APPLICATIONS #
