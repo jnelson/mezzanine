@@ -15,7 +15,7 @@ django-debug-toolbar==1.2.2
 django-debugtools==1.2.1
 django-extensions==1.4.8
 django-filter==0.8
-django-oauth2-provider==0.2.7-dev
+git+https://github.com/glassresistor/django-oauth2-provider.git
 django-organizations==0.4.3
 django-rest-swagger==0.2.8
 djangorestframework==3.0.0
