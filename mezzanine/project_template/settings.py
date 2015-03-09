@@ -268,6 +268,7 @@ INSTALLED_APPS = (
     "mezzanine.mobile",
     'actstream',
     'rest_framework_swagger',
+    'organizations',
     'djrill',
 )
 

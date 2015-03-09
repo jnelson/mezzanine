@@ -101,16 +101,3 @@ class BlogCategory(Slugged):
     @models.permalink
     def get_absolute_url(self):
         return ("blog_post_list_category", (), {"category": self.slug})
-        
-        
-from actstream import registry, action
-from django.contrib.auth.models import User
-registry.register(BlogPost)
-registry.register(User)
-
-def my_handler(sender, instance, created, **kwargs):
-    print "saved a blogpost: %s" % instance
-    action.send(instance.user, verb='posted blog', target=instance)
-
-from django.db.models.signals import post_save
-post_save.connect(my_handler, sender=BlogPost)

@@ -19,6 +19,8 @@ urlpatterns = i18n_patterns("",
     ("^admin/", include(admin.site.urls)),
 )
 
+from organizations.backends import invitation_backend
+    
 urlpatterns += patterns('',
 
     url(r'^docs/', include('rest_framework_swagger.urls')),
@@ -27,9 +29,15 @@ urlpatterns += patterns('',
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
 
-    url("^$", "storymaker.views.home", name="home"),
+    url("^$", "storymaker.views.index", name="index"),
+    url("^home/", "storymaker.views.home", name="home"),
     url("^app/", "storymaker.views.app", name="app"),
     url(r'^burundi/$', "storymaker.views.burundi_blog_view", name="burundi"),
+    
+    # django-organizations urls
+    url(r'^orgs/', include('organizations.urls')),
+    url(r'^org-invitations/', include(invitation_backend().get_urls())),
+    
     # HOMEPAGE AS STATIC TEMPLATE
     # ---------------------------
     # This pattern simply loads the index.html template. It isn't

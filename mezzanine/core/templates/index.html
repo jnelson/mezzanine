@@ -2,13 +2,13 @@
 <html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
 {% load pages_tags mezzanine_tags i18n future staticfiles blog_tags keyword_tags disqus_tags activity_tags %}
 
+<head>
+
 {% if request.user.is_authenticated %}
 <head>
-	<meta http-equiv="REFRESH" content="0;url=/blog">
+       <meta http-equiv="REFRESH" content="0;url=/home">
 </head>
 {% else %}
-
-<head>
 
 
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
